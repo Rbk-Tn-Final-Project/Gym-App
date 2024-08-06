@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from "./components/Navbar";
 import Hero from './Pages/Home/Hero.jsx';
-
 import Footer from './components/Footer.jsx';
 import Products from "./components/Dashboard/Products/ProductsList.jsx";
 import ProductDetails from "./components/Dashboard/Products/ProductDetails.jsx";
