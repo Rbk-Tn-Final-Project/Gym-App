@@ -1,6 +1,6 @@
 const sequelize = require('../config/database');
 const User = require('./user');
-
+const Product = require('./product');
 
 
 
@@ -15,6 +15,6 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 module.exports = {
-    User,
+    User,Product
    
 };
