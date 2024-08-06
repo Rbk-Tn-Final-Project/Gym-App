@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 
 import Navbar from "./components/Navbar";
 import Hero from './Pages/Home/Hero.jsx';
-
 import Footer from './components/Footer.jsx';
 
 function AppContent() {
