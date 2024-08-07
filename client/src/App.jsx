@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import AddProduct from "./components/Dashboard/Products/AddProduct.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import SignUp from './Pages/SignUp/SignUp.jsx';
+import Login from "./Pages/Login/Login.jsx";
 import Navbar from "./components/Navbar";
 import Hero from './Pages/Home/Hero.jsx';
 import Footer from './components/Footer.jsx';
@@ -22,6 +24,8 @@ function AppContent() {
           <Route path="/product" element={<Products />} /> 
           <Route path="/Add" element={<AddProduct />} /> 
           <Route path="/details/:id" element={<ProductDetails />} /> 
+          <Route path="/SignUp" element={<SignUp/>}/>
+          <Route path="/Login" element={<Login/>}/>
           <Route path="/update/:id" element={<EditProduct />} /> 
         </Routes>
       </div>
@@ -33,7 +37,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <CartProvider> {/* Wrap your AppContent with CartProvider */}
+      <CartProvider> 
         <AppContent />
       </CartProvider>
     </Router>
