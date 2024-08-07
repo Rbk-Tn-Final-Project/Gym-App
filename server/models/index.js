@@ -1,14 +1,20 @@
-const sequelize = require('./config/database');
-const User = require('./models/user');
+const sequelize = require('../config/database');
+const User = require('./user');
+const Product = require('./product');
 
-sequelize.sync({ force: false })
-    .then(() => {
-        console.log('Database & tables created!');
-    })
-    .catch(err => {
-        console.error('Unable to create table:', err);
-    });
+
+
+
+
+
+
+
+
+sequelize.sync({ force: false }).then(() => {
+    console.log('Database & tables created!');
+});
 
 module.exports = {
-    User,
+    User,Product
+   
 };
