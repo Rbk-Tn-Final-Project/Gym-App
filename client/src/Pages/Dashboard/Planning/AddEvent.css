@@ -1,0 +1,75 @@
+.add-planning-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-planning-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #343a40;
+}
+
+.add-planning-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-planning-form div {
+    margin-bottom: 15px;
+}
+
+.add-planning-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.add-planning-form input,
+.add-planning-form textarea,
+.add-planning-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.add-planning-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.add-planning-form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-planning-form button:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
