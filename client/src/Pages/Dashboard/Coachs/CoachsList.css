@@ -1,0 +1,72 @@
+.coach-list-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.coach-list-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #343a40;
+}
+
+.coach-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.coach-list-table th, .coach-list-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.coach-list-table th {
+    background-color: #343a40;
+    color: #fff;
+    font-weight: bold;
+}
+
+.coach-list-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.coach-list-table tr:hover {
+    background-color: #e9ecef;
+}
+
+.coach-list-table td img.coach-picture {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ced4da;
+}
+
+.coach-list-table td button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.coach-list-table td button:hover {
+    background-color: #0056b3;
+}
+
+.coach-list-table td button:last-child {
+    background-color: #dc3545;
+}
+
+.coach-list-table td button:last-child:hover {
+    background-color: #c82333;
+}
