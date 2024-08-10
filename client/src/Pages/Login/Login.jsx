@@ -19,24 +19,22 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form:', formData);
     try {
-      const response = await axios.post('http://127.0.0.1:3000/api/user/login', formData);
-      console.log('Login response:', response.data);
-      setMessageType('success');
-      setMessage('Login successful!');
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      setUser(response.data.user);
-      setFormData({ email: '', password: '' });
-      navigate('/');
+        const response = await axios.post('http://127.0.0.1:3000/api/users/login', formData);
+        console.log('Login response:', response.data);
+        setMessageType('success');
+        setMessage('Login successful!');
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        setUser(response.data.user);
+        setFormData({ email: '', password: '' });
+        navigate('/');
     } catch (error) {
-      console.error('Login error:', error);
-      setMessageType('error');
-      setMessage(error.response?.data?.error || 'An error occurred. Please try again.');
+        console.error('Login error:', error);
+        setMessageType('error');
+        setMessage(error.response?.data?.error || 'An error occurred. Please try again.');
     }
-  };
-
+};
   return (
     <div className="container-fluid vh-100 d-flex">
       <div className="row flex-grow-1">
