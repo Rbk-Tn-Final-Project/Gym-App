@@ -3,6 +3,8 @@ import axios from 'axios';
 // import './AddProduct.css';  
 
 const AddProduct = () => {
+  const [file, setfile]= useState(null)
+  const[imgUrl,setimgUrl]= useState('')
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -22,13 +24,13 @@ const AddProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    uploadImg()
     const data = new FormData();
     data.append('name', formData.name);
     data.append('description', formData.description);
     data.append('quantity', formData.quantity);
     data.append('price', formData.price);
-    data.append('img', formData.img);
-
+    data.append('img', imgUrl);
     try {
       const res = await axios.post('http://localhost:3000/api/product/', data);
       console.log(res);
@@ -36,6 +38,18 @@ const AddProduct = () => {
       console.error('add error:', err);
     }
   };
+
+  const uploadImg = ()=> {
+    const form = new FormData() 
+    console.log(file , 'this is file');
+    
+    form.append('file',file)
+    form.append('upload_preset','d9qeel3x')
+    axios.post('https://api.cloudinary.com/v1_1/dngpqhs3i/image/upload',form).then((res)=>
+      setimgUrl(res.data.secure_url)
+    ).catch((err)=> console.log(err)
+    )
+  } 
 
   return (
     <div className="container">
@@ -112,15 +126,20 @@ const AddProduct = () => {
                   type="file"
                   name="img"
                   id="img"
-                  onChange={handleChange}
+                  onChange={(e)=>{setfile(e.target.files[0])
+                    console.log(e.target.files);
+                   
+                  }}
+                  
                 />
+                 <button onClick={()=> uploadImg()}>Upload</button>
               </div>
             </div>
 
             <hr />
 
             <div className="form-group center">
-              <button type="submit" className="btn btn-primary">Confirm</button>
+              <button className="btn btn-primary" onClick={handleSubmit}>Confirm </button>
             </div>
           </form>
         </div>

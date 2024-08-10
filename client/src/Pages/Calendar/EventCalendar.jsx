@@ -18,7 +18,7 @@ const EventCalendar = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:3000/api/planning'); // Adjust the endpoint as needed
+                const response = await axios.get('http://127.0.0.1:3000/api/planning');
                 const formattedEvents = response.data.map(event => ({
                     id: event.id,
                     title: event.eventName,

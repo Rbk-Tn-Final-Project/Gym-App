@@ -52,10 +52,10 @@ const UpdateEvent = () => {
     const handleUpdate = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://127.0.0.1:3000/api/planning/${id}`, event); // Adjust the endpoint as needed
+            await axios.put(`http://127.0.0.1:3000/api/planning/${id}`, event);
             setMessage('Event updated successfully!');
             setTimeout(() => {
-                navigate('/EventList'); // Redirect to event list after a short delay
+                navigate('/EventList'); 
             }, 2000);
         } catch (err) {
             setError('Error updating event');

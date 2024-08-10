@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import AddProduct from "./Pages/Dashboard/Products/AddProduct.jsx";
 import SignUp from './Pages/SignUp/SignUp.jsx';
-import Login from "./Pages/Login/Login.jsx";
+import LoginPage from "./Pages/Login/Login.jsx";
 import Navbar from "./components/Navbar";
 import Hero from './Pages/Home/Hero.jsx';
 
@@ -12,6 +12,7 @@ import Products from "./Pages/Dashboard/Products/ProductsList.jsx";
 import ProductDetails from "./Pages/Dashboard/Products/ProductDetails.jsx";
 import EditProduct from "./Pages/Dashboard/Products/EditProduct.jsx";
 import { CartProvider } from './components/CartContext'; 
+import { UserProvider } from './components/UserContext'
 import Dashboard from "./Pages/Dashboard/Dashbord.jsx";
 import Layout from './Pages/Dashboard/Layout.jsx';
 import AddCoach from "./Pages/Dashboard/Coachs/AddCoachs.jsx";
@@ -34,15 +35,15 @@ function AppContent() {
   <Route path="/add" element={<Layout><AddProduct /></Layout>} />
   <Route path="/details/:id" element={<Layout><ProductDetails /></Layout>} />
   <Route path="/SignUp" element={<SignUp />} />
-  <Route path="/Login" element={<Login />} />
+  <Route path="/login" element={<LoginPage />} />
   <Route path="/update/:id" element={<Layout><EditProduct /></Layout>} />
-  <Route path="/AddCoach" element={<AddCoach/>} />
-  <Route path="/CoachList" element={<CoachList/>} />
-  <Route path="/ManageCoach/:id" element={<ManageCoaches/>} />
-  <Route path="/AddEvent" element={<AddEvent/>} />
-  <Route path="/EventList" element={<EventList/>} />
-  <Route path="/ManageEvent/:id" element={<ManageEvent/>} />
-  <Route path="/EventCalendar" element={<EventCalendar/>} />
+  <Route path="/AddCoach" element={<Layout><AddCoach/></Layout>} />
+  <Route path="/Coachs" element={<Layout><CoachList/></Layout>} />
+  <Route path="/ManageCoach/:id" element={<Layout><ManageCoaches/></Layout>} />
+  <Route path="/AddEvent" element={<Layout><AddEvent/></Layout>} />
+  <Route path="/Events" element={<Layout><EventList/></Layout>} />
+  <Route path="/ManageEvent/:id" element={<Layout><ManageEvent/></Layout>} />
+  <Route path="/Calendars" element={<Layout><EventCalendar/></Layout>} />
   
   <Route path="*" element={<div>404 Not Found</div>} />
 </Routes>
@@ -56,9 +57,11 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <CartProvider> 
-        <AppContent />
-      </CartProvider>
+      <UserProvider>
+        <CartProvider>
+          <AppContent />
+        </CartProvider>
+      </UserProvider>
     </Router>
   );
 }
