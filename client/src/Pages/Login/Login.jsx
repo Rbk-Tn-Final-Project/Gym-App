@@ -4,6 +4,7 @@ import axios from 'axios';
 import { UserContext } from '../../components/UserContext'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../../assets/img.jpeg';
+import Swal from 'sweetalert2';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -19,9 +20,26 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+  
     try {
         const response = await axios.post('http://127.0.0.1:3000/api/users/login', formData);
-        console.log('Login response:', response.data);
+        Toast.fire({
+          icon: 'success',
+          title: 'Signed up successfully'
+        });
         setMessageType('success');
         setMessage('Login successful!');
         localStorage.setItem('token', response.data.token);
@@ -30,9 +48,14 @@ const LoginPage = () => {
         setFormData({ email: '', password: '' });
         navigate('/');
     } catch (error) {
-        console.error('Login error:', error);
-        setMessageType('error');
-        setMessage(error.response?.data?.error || 'An error occurred. Please try again.');
+      Toast.fire({
+        icon: 'error',
+        title: 'An error occurred. Please try again.'
+      });
+  
+      setMessageType('error');
+      setMessage(error.response?.data?.error || 'An error occurred. Please try again.');
+      console.error(error.response?.data);
     }
 };
   return (

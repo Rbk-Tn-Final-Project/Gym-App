@@ -18,7 +18,7 @@ export const UserProvider = ({ children }) => {
                 localStorage.removeItem('user');
             }
         } else if (userData === "undefined") {
-            console.warn('User data in localStorage is "undefined". Clearing it.');
+         
             localStorage.removeItem('user');
         }
     }, []);
