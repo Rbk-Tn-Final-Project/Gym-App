@@ -39,12 +39,19 @@ const PlanningList = () => {
         navigate(`/ManageEvent/${id}`); // Navigate to the update page
     };
 
+    const handleAddEventClick = () => {
+        navigate(`/AddEvent`)
+    }
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 
     return (
         <div className="planning-list-container">
             <h1>Planning List</h1>
+            <button className="add-event-button" onClick={handleAddEventClick}>
+                Add Event
+            </button>
             <table className="planning-list-table">
                 <thead>
                     <tr>

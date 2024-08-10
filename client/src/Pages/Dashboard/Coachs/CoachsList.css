@@ -70,3 +70,18 @@
 .coach-list-table td button:last-child:hover {
     background-color: #c82333;
 }
+.add-coach-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.add-coach-button:hover {
+    background-color: #218838;
+}
+

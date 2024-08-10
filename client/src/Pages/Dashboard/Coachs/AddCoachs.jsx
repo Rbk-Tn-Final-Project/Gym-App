@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './AddCoachs.css'
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import './AddCoachs.css';
 
 const AddCoach = () => {
     const [coach, setCoach] = useState({
@@ -13,6 +14,7 @@ const AddCoach = () => {
     });
 
     const [message, setMessage] = useState('');
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -28,6 +30,10 @@ const AddCoach = () => {
             await axios.post('http://127.0.0.1:3000/api/coaches/', coach);
             setMessage('Coach added successfully!');
             setCoach({ firstName: '', lastName: '', email: '', phone: '', specialty: '', picture: '' });
+            
+            setTimeout(() => {
+                navigate('/coachlist'); // Redirect to the CoachList page after 2 seconds
+            }, 2000);
         } catch (error) {
             setMessage('Error adding coach. Please try again.');
             console.error('There was an error adding the coach:', error);

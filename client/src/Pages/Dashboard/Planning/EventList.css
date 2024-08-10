@@ -51,3 +51,17 @@
 .error-message {
     color: #dc3545;
 }
+.add-event-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.add-event-button:hover {
+    background-color: #218838;
+}
