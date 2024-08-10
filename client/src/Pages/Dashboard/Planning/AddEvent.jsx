@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './AddEvent.css'; // Import the CSS file
 
 const AddPlanning = () => {
@@ -14,6 +15,7 @@ const AddPlanning = () => {
     });
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate(); // Initialize useNavigate
 
     useEffect(() => {
         const fetchCoaches = async () => {
@@ -49,6 +51,9 @@ const AddPlanning = () => {
                 description: '',
                 coachId: ''
             });
+            setTimeout(() => {
+                navigate('/eventlist'); 
+            }, 2000);
         } catch (err) {
             setError('Error adding planning event');
         }

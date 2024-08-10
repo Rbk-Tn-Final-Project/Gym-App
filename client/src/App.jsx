@@ -20,6 +20,7 @@ import ManageCoaches from "./Pages/Dashboard/Coachs/ManageCoachs.jsx";
 import AddEvent from "./Pages/Dashboard/Planning/AddEvent.jsx";
 import EventList from "./Pages/Dashboard/Planning/EventList.jsx";
 import ManageEvent from "./Pages/Dashboard/Planning/ManageEvent.jsx";
+import EventCalendar from "./Pages/Calendar/EventCalendar.jsx";
 
 function AppContent() {
   return (
@@ -41,7 +42,7 @@ function AppContent() {
   <Route path="/AddEvent" element={<AddEvent/>} />
   <Route path="/EventList" element={<EventList/>} />
   <Route path="/ManageEvent/:id" element={<ManageEvent/>} />
-  
+  <Route path="/EventCalendar" element={<EventCalendar/>} />
   
   <Route path="*" element={<div>404 Not Found</div>} />
 </Routes>

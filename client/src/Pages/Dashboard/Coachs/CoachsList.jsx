@@ -40,12 +40,19 @@ const CoachList = () => {
         }
     };
 
+    const handleAddCoachClick = () => {
+        navigate('/AddCoach');
+    }
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 
     return (
         <div className="coach-list-container">
             <h1>Coach List</h1>
+            <button className="add-coach-button" onClick={handleAddCoachClick}>
+                Add Coach
+            </button>
             <table className="coach-list-table">
                 <thead>
                     <tr>
