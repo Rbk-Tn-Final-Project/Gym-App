@@ -7,6 +7,7 @@ import './SignUp.css'
 const CreateAccountPage = () => {
   const [formData, setFormData] = useState({
     firstName: '',
+    lastName:'',
     email: '',
     password: ''
   });
@@ -21,13 +22,16 @@ const CreateAccountPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:3000/api/user/register', formData);
+      const response = await axios.post('http://127.0.0.1:3000/api/users/register', formData);
+
       setMessageType('success');
       setMessage('Account created successfully!');
       console.log(response.data);
    
       setFormData({
+        
         firstName: '',
+        lastName:'',
         email: '',
         password: ''
       });
@@ -54,7 +58,9 @@ const CreateAccountPage = () => {
               </div>
             )}
             <form onSubmit={handleSubmit}>
-              <div className="mb-3">
+             
+                 
+                  <div className="mb-3">
                 <input
                   type="text"
                   className="form-control"
@@ -63,7 +69,17 @@ const CreateAccountPage = () => {
                   value={formData.firstName}
                   onChange={handleChange}
                 />
-              </div>
+            </div>
+            <div className="mb-3">
+                <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Last Name"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                />
+            </div>
               <div className="mb-3">
                 <input
                   type="text"
