@@ -3,6 +3,12 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../../assets/img.jpeg';
 import './SignUp.css'
+import Swal from 'sweetalert2';
+
+
+
+
+
 
 const CreateAccountPage = () => {
   const [formData, setFormData] = useState({
@@ -21,26 +27,49 @@ const CreateAccountPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+  
     try {
       const response = await axios.post('http://127.0.0.1:3000/api/users/register', formData);
-
+  
+      Toast.fire({
+        icon: 'success',
+        title: 'Signed up successfully'
+      });
+  
       setMessageType('success');
-      setMessage('Account created successfully!');
+      setMessage('Signed up successfully');
       console.log(response.data);
-   
+  
       setFormData({
-        
         firstName: '',
-        lastName:'',
+        lastName: '',
         email: '',
         password: ''
       });
     } catch (error) {
+      Toast.fire({
+        icon: 'error',
+        title: 'An error occurred. Please try again.'
+      });
+  
       setMessageType('error');
       setMessage(error.response?.data?.error || 'An error occurred. Please try again.');
-      console.error(error.response.data);
+      console.error(error.response?.data);
     }
   };
+  
 
   return (
     <div className="container-fluid vh-100 d-flex">
@@ -101,10 +130,7 @@ const CreateAccountPage = () => {
                 />
               </div>
               <button type="submit" className="btn btn-danger w-100 mb-3">Create Account</button>
-              {/* <button type="button" className="btn btn-light w-100 mb-3">
-                <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google Logo" />
-                Sign up with Google
-              </button> */}
+              
               <p className="text-center">
                 Already have account? <a href="/Login" className="text-danger">Log in</a>
               </p>
