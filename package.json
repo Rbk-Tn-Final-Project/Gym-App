@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-big-calendar": "^1.13.2",
+    "react-modal": "^3.16.1"
+  }
+}

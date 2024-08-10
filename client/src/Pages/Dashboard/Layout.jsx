@@ -10,6 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { useNavigate } from 'react-router-dom';
+import { Calendar } from 'react-big-calendar';
 
 const Layout = ({ children }) => {
   const [open, setOpen] = React.useState(false);
@@ -21,12 +22,12 @@ const Layout = ({ children }) => {
 
   const handleNavigation = (path) => {
     navigate(path);
-    setOpen(false); // Close the drawer after navigating
+    setOpen(false);
   };
 
   const DrawerList = (
     <List>
-      {['Inbox', 'Products', 'Planning', 'view app'].map((text, index) => (
+      {['Inbox', 'Products', 'Coachs', 'Events','Calendars'].map((text, index) => (
         <ListItem key={text} disablePadding>
           <ListItemButton onClick={() => handleNavigation(`/${text.toLowerCase()}`)}>
             <ListItemIcon>
