@@ -5,9 +5,10 @@ import './EventList.css'; // Ensure the CSS file name is updated if needed
 
 const PlanningList = () => {
     const [plannings, setPlannings] = useState([]);
+    const [coaches, setCoaches] = useState(''); // Added state for coaches
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const navigate = useNavigate(); // Add this line to use the navigate function
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchPlannings = async () => {
@@ -22,6 +23,19 @@ const PlanningList = () => {
         };
 
         fetchPlannings();
+    }, []);
+
+    useEffect(() => {
+        const fetchCoaches = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:3000/api/coaches/'); // Adjust the endpoint as needed
+                setCoaches(response.data);
+            } catch (err) {
+                setError('Error fetching coaches');
+            }
+        };
+
+        fetchCoaches();
     }, []);
 
     const handleDelete = async (id) => {
@@ -40,8 +54,8 @@ const PlanningList = () => {
     };
 
     const handleAddEventClick = () => {
-        navigate(`/AddEvent`)
-    }
+        navigate(`/AddEvent`);
+    };
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
@@ -73,9 +87,9 @@ const PlanningList = () => {
                             <td>{planning.location}</td>
                             <td>{planning.description}</td>
                             <td>
-                                {planning.coach 
-                                    ? `${planning.coach.firstName} ${planning.coach.lastName}` 
-                                    : 'No Coach Assigned'}
+                                {planning.coaches 
+                                    ? `${planning.coach.firstName} ${planning.coach.lastName}`
+                                    : 'No Coach Assigned'}      
                             </td>
                             <td>
                                 <button onClick={() => handleUpdateClick(planning.id)} className='update-button'>Update</button>

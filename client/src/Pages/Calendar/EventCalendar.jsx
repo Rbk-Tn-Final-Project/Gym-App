@@ -10,10 +10,12 @@ const localizer = momentLocalizer(moment);
 
 const EventCalendar = () => {
     const [events, setEvents] = useState([]);
+    const [filteredEvents, setFilteredEvents] = useState([]);
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -26,9 +28,10 @@ const EventCalendar = () => {
                     end: new Date(`${event.eventDate}T${event.eventTime}`),
                     location: event.location,
                     description: event.description,
-                    coach: event.coach ? `${event.coach.firstName} ${event.coach.lastName}` : 'N/A',
+                    coach: event.coach ? `${event.coach.firstName} ${event.coach.lastName}` : 'N/A',  //manech laki el coach name w last name 
                 }));
                 setEvents(formattedEvents);
+                setFilteredEvents(formattedEvents); // Initialize filtered events
                 setLoading(false);
             } catch (err) {
                 setError('Error fetching events');
@@ -38,6 +41,16 @@ const EventCalendar = () => {
 
         fetchEvents();
     }, []);
+
+    const handleSearchChange = (e) => {
+        const term = e.target.value.toLowerCase();
+        setSearchTerm(term);
+
+        const filtered = events.filter(event =>
+            event.coach.toLowerCase().includes(term)
+        );
+        setFilteredEvents(filtered);
+    };
 
     const handleEventClick = async (event) => {
         try {
@@ -72,9 +85,18 @@ const EventCalendar = () => {
     return (
         <div className="calendar-container">
             <h1>Event Calendar</h1>
+            <div className="search-bar-container">
+                <input
+                    type="text"
+                    placeholder="Search by Coach Name"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    className="search-bar"
+                />
+            </div>
             <Calendar
                 localizer={localizer}
-                events={events}
+                events={filteredEvents} // Use filtered events for the calendar
                 startAccessor="start"
                 endAccessor="end"
                 style={{ height: 500 }}
@@ -95,7 +117,7 @@ const EventCalendar = () => {
                         <p><strong>Time:</strong> {selectedEvent.eventTime}</p>
                         <p><strong>Location:</strong> {selectedEvent.location}</p>
                         <p><strong>Description:</strong> {selectedEvent.description}</p>
-                        <p><strong>Coach:</strong> {selectedEvent.coach ? `${selectedEvent.coach.firstName} ${selectedEvent.coach.lastName}` : 'N/A'}</p>
+                        <p><strong>Coach:</strong> {selectedEvent.coach ? `${selectedEvent.coach.firstName} ${selectedEvent.coach.lastName}` : 'N/A'}</p> 
                         <button onClick={closeModal}>Close</button>
                     </div>
                 )}

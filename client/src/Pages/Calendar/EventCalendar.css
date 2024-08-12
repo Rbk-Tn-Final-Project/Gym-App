@@ -44,3 +44,32 @@ button {
 button:hover {
     background-color: #255a8c;
 }
+/* Container for the search bar */
+.search-bar-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style for the search bar input */
+.search-bar {
+    width: 300px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #3174ad;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Add focus effect to the search bar */
+.search-bar:focus {
+    border-color: #1b5f8c;
+    box-shadow: 0 0 5px rgba(49, 116, 173, 0.5);
+}
+
+/* Add a placeholder style */
+.search-bar::placeholder {
+    color: #999;
+    font-style: italic;
+}

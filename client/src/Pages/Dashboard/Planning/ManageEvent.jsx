@@ -55,7 +55,7 @@ const UpdateEvent = () => {
             await axios.put(`http://127.0.0.1:3000/api/planning/${id}`, event);
             setMessage('Event updated successfully!');
             setTimeout(() => {
-                navigate('/EventList'); 
+                navigate('/events'); 
             }, 2000);
         } catch (err) {
             setError('Error updating event');

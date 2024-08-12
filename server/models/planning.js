@@ -38,6 +38,8 @@ const Planning = sequelize.define('Planning', {
     timestamps: false,
 });
 
-Planning.belongsTo(CoachList, { foreignKey: 'coachId' });
+Planning.associate = (models) => {
+    Planning.belongsTo(models.CoachList, { foreignKey: 'coachId', as: 'coach' });
+};
 
 module.exports = Planning;
