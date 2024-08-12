@@ -1,0 +1,59 @@
+.inbox-container, .message-detail-container, .compose-message-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.message-list {
+    list-style: none;
+    padding: 0;
+}
+
+.message-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.message-item a {
+    text-decoration: none;
+    color: #007BFF;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-item a:hover {
+    color: #0056b3;
+}
+
+.compose-message-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.compose-message-container form label {
+    margin-top: 10px;
+}
+
+.compose-message-container form input,
+.compose-message-container form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.compose-message-container form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.compose-message-container form button:hover {
+    background-color: #0056b3;
+}
