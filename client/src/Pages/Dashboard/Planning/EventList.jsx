@@ -27,7 +27,7 @@ const PlanningList = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this planning?')) {
             try {
-                await axios.delete(`http://127.0.0.1:3000/api/planning/${id}`); // Adjust the endpoint as needed
+                await axios.delete(`http://127.0.0.1:3000/api/planning/${id}`); 
                 setPlannings(plannings.filter(planning => planning.id !== id));
             } catch (err) {
                 setError('Error deleting planning');
@@ -36,7 +36,7 @@ const PlanningList = () => {
     };
 
     const handleUpdateClick = (id) => {
-        navigate(`/ManageEvent/${id}`); // Navigate to the update page
+        navigate(`/ManageEvent/${id}`); 
     };
 
     const handleAddEventClick = () => {
@@ -72,6 +72,7 @@ const PlanningList = () => {
                             <td>{planning.eventTime}</td>
                             <td>{planning.location}</td>
                             <td>{planning.description}</td>
+                            
                             <td>
                                 {planning.coach 
                                     ? `${planning.coach.firstName} ${planning.coach.lastName}` 
