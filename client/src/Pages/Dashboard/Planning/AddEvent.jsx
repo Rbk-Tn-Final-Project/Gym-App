@@ -52,7 +52,7 @@ const AddPlanning = () => {
                 coachId: ''
             });
             setTimeout(() => {
-                navigate('/eventlist'); 
+                navigate('/events'); 
             }, 2000);
         } catch (err) {
             setError('Error adding planning event');

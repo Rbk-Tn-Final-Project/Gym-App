@@ -14,7 +14,8 @@
 }
 
 .planning-list-table th {
-    background-color: #f4f4f4;
+    background-color: #343a40;
+    color: white;
 }
 
 .update-button, .delete-button {
