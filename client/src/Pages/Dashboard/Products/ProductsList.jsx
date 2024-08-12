@@ -3,15 +3,12 @@ import './ProductsList.css';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 const Products = () => {
-  const [isModal, setIsModal] = useState(false);
-  const [project, setProject] = useState({});
-  const [projects, setProjects] = useState([]);
-  const [listSide, setListSide] = useState([]);
-  const [listPriority, setListPriority] = useState([]);
   const [products, setProducts] = useState([]);
-const navigation = useNavigate();
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -20,25 +17,24 @@ const navigation = useNavigate();
     try {
       const response = await axios.get('http://localhost:3000/api/product/');
       setProducts(response.data);
-      console.log('rp:', response);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
   };
+
   const deleteProducts = async () => {
     try {
-       await axios.delete('http://localhost:3000/api/product/');
-       fetchProducts()
+      await axios.delete('http://localhost:3000/api/product/');
+      fetchProducts();
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error('Error deleting products:', error);
     }
   };
-  const addProduct = () => {
-    navigation('/Add')  };
 
-  const createProject = () => {
-    // Implementation for createProject
+  const addProduct = () => {
+    navigate('/add');
   };
+
   return (
     <div id="app">
       <header>
@@ -57,7 +53,7 @@ const navigation = useNavigate();
                 <th className="left">Image</th>
                 <th className="left">Product name</th>
                 <th className="left">Quantity</th>
-                <th className="left">Price</th>  
+                <th className="left">Price</th>
               </tr>
             </thead>
             <tbody>
@@ -65,16 +61,16 @@ const navigation = useNavigate();
                 <tr key={index} className="product">
                   <td>
                     <div className="priority">
-                      <img src={product.img} alt={product.name} style={{width: 50}}/>
+                      <img src={product.img} alt={product.name} style={{ width: 50 }} />
                     </div>
                   </td>
                   <td><div>{product.name}</div></td>
-                  <td >{product.quantity}</td>
-                  <td >{product.price}</td>
+                  <td>{product.quantity}</td>
+                  <td>{product.price}</td>
                   <td className="side">
-                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{paddingRight: 10}}/>
-                  <Link to={`/details/${product.id}`}>Preview</Link>
-                    </td>
+                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{ paddingRight: 10 }} />
+                    <Link to={`/details/${product.id}`}>Preview</Link>
+                  </td>
                 </tr>
               ))}
             </tbody>
