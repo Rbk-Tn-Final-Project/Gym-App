@@ -1,3 +1,4 @@
+const CoachList = require('../models/coachs');
 const Planning = require('../models/planning')
 
 // Create a new planning entry
@@ -14,7 +15,17 @@ exports.createPlanning = async (req, res) => {
 exports.getAllPlanning = async (req, res) => {
     try {
         const planningEntries = await Planning.findAll();
-        res.status(200).json(planningEntries);
+        const coach = await CoachList.findAll()
+        
+       const coachs= planningEntries.map((elm)=>{
+        const coach = CoachList.findAll({id:elm.coachId})
+        return coach
+       })
+       console.log(coachs);
+       
+        res.status(200).json({planningEntries,coachs});
+
+        
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
@@ -31,6 +42,36 @@ exports.getPlanningById = async (req, res) => {
         }
     } catch (err) {
         res.status(400).json({ error: err.message });
+    }
+};
+// New method to search events by coach name
+exports.searchPlanningsByCoach = async (req, res) => {
+    try {
+        const { coachName } = req.query;
+
+        if (!coachName) {
+            return res.status(400).json({ message: 'Coach name is required' });
+        }
+
+        const plannings = await Planning.findAll({
+            include: [{
+                model: Coach,
+                where: {
+                    [Op.or]: [
+                        { firstName: { [Op.like]: `%${coachName}%` } },
+                        { lastName: { [Op.like]: `%${coachName}%` } }
+                    ]
+                }
+            }]
+        });
+
+        if (plannings.length === 0) {
+            return res.status(404).json({ message: 'No events found for the specified coach' });
+        }
+
+        res.json(plannings);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching events', error: err.message });
     }
 };
 

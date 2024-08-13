@@ -1,33 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './EventList.css'; // Ensure the CSS file name is updated if needed
+import './EventList.css';
 
 const PlanningList = () => {
     const [plannings, setPlannings] = useState([]);
+    const [coaches, setCoaches] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const navigate = useNavigate(); // Add this line to use the navigate function
+    const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchPlannings = async () => {
+        const fetchData = async () => {
+            setLoading(true);
             try {
-                const response = await axios.get('http://127.0.0.1:3000/api/planning'); // Adjust the endpoint as needed
-                setPlannings(response.data);
-                setLoading(false);
+                const [planningResponse, coachesResponse] = await Promise.all([
+                    axios.get('http://127.0.0.1:3000/api/planning'),
+                    axios.get('http://127.0.0.1:3000/api/coaches')
+                ]);
+
+                console.log('Plannings Response:', planningResponse.data);
+                console.log('Coaches Response:', coachesResponse.data);
+
+                const { planningEntries, coachs } = planningResponse.data;
+                setPlannings(planningEntries);
+
+                if (Array.isArray(coachesResponse.data)) {
+                    setCoaches(coachesResponse.data);
+                } else {
+                    console.warn('Unexpected response format for coaches:', coachesResponse.data);
+                    setCoaches([]);
+                }
             } catch (err) {
-                setError('Error fetching plannings');
+                console.error('Error fetching data:', err);
+                setError('Error fetching data');
+            } finally {
                 setLoading(false);
             }
         };
 
-        fetchPlannings();
+        fetchData();
     }, []);
 
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this planning?')) {
             try {
-                await axios.delete(`http://127.0.0.1:3000/api/planning/${id}`); 
+                await axios.delete(`http://127.0.0.1:3000/api/planning/${id}`);
                 setPlannings(plannings.filter(planning => planning.id !== id));
             } catch (err) {
                 setError('Error deleting planning');
@@ -36,16 +54,16 @@ const PlanningList = () => {
     };
 
     const handleUpdateClick = (id) => {
-        navigate(`/ManageEvent/${id}`); 
+        navigate(`/ManageEvent/${id}`);
     };
-
+    
     const handleAddEventClick = () => {
-        navigate(`/AddEvent`)
-    }
-
+        navigate(`/AddEvent`);
+    };
+    
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
-
+    
     return (
         <div className="planning-list-container">
             <h1>Planning List</h1>
@@ -65,25 +83,23 @@ const PlanningList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {plannings.map(planning => (
-                        <tr key={planning.id}>
-                            <td>{planning.eventName}</td>
-                            <td>{planning.eventDate}</td>
-                            <td>{planning.eventTime}</td>
-                            <td>{planning.location}</td>
-                            <td>{planning.description}</td>
-                            
-                            <td>
-                                {planning.coach 
-                                    ? `${planning.coach.firstName} ${planning.coach.lastName}` 
-                                    : 'No Coach Assigned'}
-                            </td>
-                            <td>
-                                <button onClick={() => handleUpdateClick(planning.id)} className='update-button'>Update</button>
-                                <button onClick={() => handleDelete(planning.id)} className="delete-button">Delete</button>
-                            </td>
-                        </tr>
-                    ))}
+                    {plannings.map(planning => {
+                        const coach = coaches.find(c => c.id === planning.coachId);
+                        return (
+                            <tr key={planning.id}>
+                                <td>{planning.eventName}</td>
+                                <td>{planning.eventDate}</td>
+                                <td>{planning.eventTime}</td>
+                                <td>{planning.location}</td>
+                                <td>{planning.description}</td>
+                                <td>{coach ? `${coach.firstName} ${coach.lastName}` : 'Unknown'}</td>
+                                <td>
+                                    <button onClick={() => handleUpdateClick(planning.id)} className='update-button'>Update</button>
+                                    <button onClick={() => handleDelete(planning.id)} className="delete-button">Delete</button>
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         </div>

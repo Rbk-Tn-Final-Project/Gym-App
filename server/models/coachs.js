@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Planning = require ('./planning')
 
 const CoachList = sequelize.define('CoachList', {
     id: {
@@ -34,5 +35,10 @@ const CoachList = sequelize.define('CoachList', {
     tableName: 'coach_list',
     timestamps: false,
 });
+
+CoachList.associate = (models) => {
+    CoachList.hasMany(models.Planning, { foreignKey: 'coachId', as: 'plannings' });
+};
+
 
 module.exports = CoachList;
