@@ -32,7 +32,7 @@ const AddCoach = () => {
             setCoach({ firstName: '', lastName: '', email: '', phone: '', specialty: '', picture: '' });
             
             setTimeout(() => {
-                navigate('/coachlist'); // Redirect to the CoachList page after 2 seconds
+                navigate('/Coachs'); // Redirect to the CoachList page after 2 seconds
             }, 2000);
         } catch (error) {
             setMessage('Error adding coach. Please try again.');

@@ -1,75 +1,116 @@
+/* Container for the entire calendar */
 .calendar-container {
-    margin: 20px;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-    z-index: 1000;
-}
-
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #f9f9f9;
     border-radius: 8px;
-    outline: none;
-    width: 400px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #3174ad;
-    color: white;
-    border: none;
+/* Header styling */
+.calendar-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Container for dropdowns */
+.dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+/* Dropdown styling */
+.dropdown {
+    padding: 10px;
+    font-size: 1em;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.dropdown:hover,
+.dropdown:focus {
+    border-color: #3174ad;
+    outline: none;
+}
+
+/* Calendar styling */
+.rbc-calendar {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.rbc-toolbar {
+    background-color: #3174ad;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+.rbc-toolbar button {
+    color: #050505;
+    background-color: #3174ad;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #255a8c;
+.rbc-toolbar button:hover {
+    background-color: #265a88;
 }
-/* Container for the search bar */
-.search-bar-container {
-    margin-bottom: 20px;
+
+/* Modal styling */
+.modal-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-/* Style for the search bar input */
-.search-bar {
-    width: 300px;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #3174ad;
+/* Event Details styling */
+.modal-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #3174ad;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #3174ad;
+    border: none;
     border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Add focus effect to the search bar */
-.search-bar:focus {
-    border-color: #1b5f8c;
-    box-shadow: 0 0 5px rgba(49, 116, 173, 0.5);
-}
-
-/* Add a placeholder style */
-.search-bar::placeholder {
-    color: #999;
-    font-style: italic;
+.modal-content button:hover {
+    background-color: #265a88;
 }
