@@ -46,7 +46,7 @@ const ManageCoach = () => {
             setMessage('Coach updated successfully!');
             // Redirect back to the coach list after a short delay
             setTimeout(() => {
-                navigate('/CoachList');
+                navigate('/Coachs');
             }, 2000);
         } catch (error) {
             setMessage('Error updating coach. Please try again.');
