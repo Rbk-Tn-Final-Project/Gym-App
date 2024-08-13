@@ -28,7 +28,7 @@ const getRandomImagePath = () => {
 
 exports.createProduct = async (req, res) => {
     const {name, quantity, price ,description} = req.body;
-    const img = req.file;
+    const images = req.file;
     try {
         const randomImagePath = getRandomImagePath(); // Get a random image path
         const product = await Product.create({  img:randomImagePath ,name, quantity, price ,description});
@@ -52,7 +52,7 @@ exports.getProductById = async (req, res) => {
 
 exports.updateProduct = async (req, res) => {
     const { id } = req.params;
-    const {img, name, quantity, price ,description } = req.body;
+    const {images, name, quantity, price ,description } = req.body;
 
     try {
         const product = await Product.findByPk(id);
@@ -60,7 +60,7 @@ exports.updateProduct = async (req, res) => {
 
         product.name = name;
         product.price = price;
-        product.img = img;
+        product.images= img;
         product.quantity = quantity;
         product.description= description;
 

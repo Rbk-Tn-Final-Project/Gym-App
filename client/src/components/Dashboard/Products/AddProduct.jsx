@@ -31,7 +31,7 @@ const AddProduct = () => {
 
     try {
       const res = await axios.post('http://localhost:3000/api/product/', data);
-      console.log(res);
+      console.log(data);
     } catch (err) {
       console.error('add error:', err);
     }
