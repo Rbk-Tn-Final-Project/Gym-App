@@ -1,0 +1,75 @@
+.update-event-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.update-event-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #343a40;
+}
+
+.update-event-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.update-event-form div {
+    margin-bottom: 15px;
+}
+
+.update-event-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.update-event-form input,
+.update-event-form textarea,
+.update-event-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.update-event-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.update-event-form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-event-form button:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}

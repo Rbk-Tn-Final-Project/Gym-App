@@ -1,0 +1,68 @@
+.planning-list-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.planning-list-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.planning-list-table th, .planning-list-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.planning-list-table th {
+    background-color: #343a40;
+    color: white;
+}
+
+.update-button, .delete-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.update-button {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+}
+
+.update-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    margin-left: 8px;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.success-message {
+    color: #28a745;
+}
+
+.error-message {
+    color: #dc3545;
+}
+.add-event-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.add-event-button:hover {
+    background-color: #218838;
+}

@@ -3,17 +3,15 @@ const jwt = require('jsonwebtoken');
 const { User } = require('../models');
 require('dotenv').config();
 exports.registerUser = async (req, res) => {
-    const { firstName, email, password } = req.body;
+    const { firstName, lastName, email, password } = req.body;
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = await User.create({
             firstName,
-            lastName,
+            lastName: lastName || '',  
             email,
             password: hashedPassword,
-          
-          
             role: 'user'
         });
         res.status(201).json(user);

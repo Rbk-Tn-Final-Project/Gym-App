@@ -4,6 +4,7 @@ import axios from 'axios';
 import { UserContext } from '../../components/UserContext'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../../assets/img.jpeg';
+import Swal from 'sweetalert2';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -19,24 +20,44 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form:', formData);
+
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+  
     try {
-      const response = await axios.post('http://127.0.0.1:3000/api/user/login', formData);
-      console.log('Login response:', response.data);
-      setMessageType('success');
-      setMessage('Login successful!');
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      setUser(response.data.user);
-      setFormData({ email: '', password: '' });
-      navigate('/');
+        const response = await axios.post('http://127.0.0.1:3000/api/users/login', formData);
+        Toast.fire({
+          icon: 'success',
+          title: 'Signed up successfully'
+        });
+        setMessageType('success');
+        setMessage('Login successful!');
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        setUser(response.data.user);
+        setFormData({ email: '', password: '' });
+        navigate('/');
     } catch (error) {
-      console.error('Login error:', error);
+      Toast.fire({
+        icon: 'error',
+        title: 'An error occurred. Please try again.'
+      });
+  
       setMessageType('error');
       setMessage(error.response?.data?.error || 'An error occurred. Please try again.');
+      console.error(error.response?.data);
     }
-  };
-
+};
   return (
     <div className="container-fluid vh-100 d-flex">
       <div className="row flex-grow-1">
