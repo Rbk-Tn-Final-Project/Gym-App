@@ -21,7 +21,8 @@ const UpdateEvent = () => {
     useEffect(() => {
         const fetchEvent = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:3000/api/planning/${id}`); // Adjust the endpoint as needed
+                const response = await axios.get(`http://127.0.0.1:3000/api/planning/${id}`); 
+               
                 setEvent(response.data);
             } catch (err) {
                 setError('Error fetching event details');
@@ -30,7 +31,7 @@ const UpdateEvent = () => {
 
         const fetchCoaches = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:3000/api/coaches/'); // Adjust the endpoint as needed
+                const response = await axios.get('http://127.0.0.1:3000/api/coaches/'); 
                 setCoaches(response.data);
             } catch (err) {
                 setError('Error fetching coaches');

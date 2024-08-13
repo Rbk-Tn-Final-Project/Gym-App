@@ -1,3 +1,4 @@
+const CoachList = require('../models/coachs');
 const Planning = require('../models/planning')
 
 // Create a new planning entry
@@ -14,7 +15,17 @@ exports.createPlanning = async (req, res) => {
 exports.getAllPlanning = async (req, res) => {
     try {
         const planningEntries = await Planning.findAll();
-        res.status(200).json(planningEntries);
+        const coach = await CoachList.findAll()
+        
+       const coachs= planningEntries.map((elm)=>{
+        const coach = CoachList.findAll({id:elm.coachId})
+        return coach
+       })
+       console.log(coachs);
+       
+        res.status(200).json({planningEntries,coachs});
+
+        
     } catch (err) {
         res.status(400).json({ error: err.message });
     }

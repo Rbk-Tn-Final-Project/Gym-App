@@ -16,30 +16,46 @@ const EventCalendar = () => {
     const [error, setError] = useState('');
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const [coaches, setCoaches] = useState([]);
 
     useEffect(() => {
-        const fetchEvents = async () => {
+        const fetchEventsAndCoaches = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:3000/api/planning');
-                const formattedEvents = response.data.map(event => ({
-                    id: event.id,
-                    title: event.eventName,
-                    start: new Date(`${event.eventDate}T${event.eventTime}`),
-                    end: new Date(`${event.eventDate}T${event.eventTime}`),
-                    location: event.location,
-                    description: event.description,
-                    coach: event.coach ? `${event.coach.firstName} ${event.coach.lastName}` : 'N/A',  //manech laki el coach name w last name 
-                }));
+                const [planningResponse, coachesResponse] = await Promise.all([
+                    axios.get('http://127.0.0.1:3000/api/planning'),
+                    axios.get('http://127.0.0.1:3000/api/coaches')
+                ]);
+
+                console.log('Events Response:', planningResponse.data);
+                console.log('Coaches Response:', coachesResponse.data);
+
+                const formattedCoaches = coachesResponse.data;
+                setCoaches(formattedCoaches);
+
+                const formattedEvents = planningResponse.data.planningEntries.map(event => {
+                    const coach = formattedCoaches.find(c => c.id === event.coachId);
+                    return {
+                        id: event.id,
+                        title: event.eventName,
+                        start: new Date(`${event.eventDate}T${event.eventTime}`),
+                        end: new Date(new Date(`${event.eventDate}T${event.eventTime}`).getTime() + 60 * 60 * 1000), // Assuming 1-hour duration
+                        location: event.location,
+                        description: event.description,
+                        coach: coach ? `${coach.firstName || ''} ${coach.lastName || ''}` : 'N/A',
+                    };
+                });
+
                 setEvents(formattedEvents);
-                setFilteredEvents(formattedEvents); // Initialize filtered events
+                setFilteredEvents(formattedEvents);
                 setLoading(false);
             } catch (err) {
+                console.error('Error fetching events:', err);
                 setError('Error fetching events');
                 setLoading(false);
             }
         };
 
-        fetchEvents();
+        fetchEventsAndCoaches();
     }, []);
 
     const handleSearchChange = (e) => {
@@ -79,6 +95,10 @@ const EventCalendar = () => {
         setSelectedEvent(null);
     };
 
+    useEffect(() => {
+        Modal.setAppElement('#root'); // Ensure this matches the ID of your root element
+    }, []);
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 
@@ -96,7 +116,7 @@ const EventCalendar = () => {
             </div>
             <Calendar
                 localizer={localizer}
-                events={filteredEvents} // Use filtered events for the calendar
+                events={filteredEvents}
                 startAccessor="start"
                 endAccessor="end"
                 style={{ height: 500 }}
@@ -117,7 +137,7 @@ const EventCalendar = () => {
                         <p><strong>Time:</strong> {selectedEvent.eventTime}</p>
                         <p><strong>Location:</strong> {selectedEvent.location}</p>
                         <p><strong>Description:</strong> {selectedEvent.description}</p>
-                        <p><strong>Coach:</strong> {selectedEvent.coach ? `${selectedEvent.coach.firstName} ${selectedEvent.coach.lastName}` : 'N/A'}</p> 
+                        <p><strong>Coach:</strong> {selectedEvent.coachId || 'N/A'}</p>
                         <button onClick={closeModal}>Close</button>
                     </div>
                 )}
