@@ -2,22 +2,24 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
 const Message = sequelize.define('Message', {
-    sender: {
+    firstName: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    recipient: {
+    lastName: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    subject: {
+    email: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    body: {
+    message: {
         type: DataTypes.TEXT,
         allowNull: false
     }
 });
+
+module.exports = Message;
 
 module.exports = Message;
