@@ -16,7 +16,7 @@ const EventCalendar = () => {
     const [error, setError] = useState('');
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedCoach, setSelectedCoach] = useState('');
-    const [selectedEventName, setSelectedEventName] = useState(''); // New state for selected event name
+    const [selectedEventName, setSelectedEventName] = useState(''); 
     const [coaches, setCoaches] = useState([]);
 
     useEffect(() => {
@@ -36,7 +36,7 @@ const EventCalendar = () => {
                         id: event.id,
                         title: event.eventName,
                         start: new Date(`${event.eventDate}T${event.eventTime}`),
-                        end: new Date(new Date(`${event.eventDate}T${event.eventTime}`).getTime() + 60 * 60 * 1000), // Assuming 1-hour duration
+                        end: new Date(new Date(`${event.eventDate}T${event.eventTime}`).getTime() + 60 * 60 * 1000), 
                         location: event.location,
                         description: event.description,
                         coach: coach ? `${coach.firstName || ''} ${coach.lastName || ''}` : 'N/A',
@@ -63,7 +63,7 @@ const EventCalendar = () => {
         const filtered = events.filter(event =>
             event.coach === coachName
         );
-        setFilteredEvents(coachName ? filtered : events); // Show all events if no coach is selected
+        setFilteredEvents(coachName ? filtered : events); 
     };
 
     const handleEventNameChange = (e) => {
@@ -73,11 +73,11 @@ const EventCalendar = () => {
         const filtered = events.filter(event =>
             event.title === eventName
         );
-        setFilteredEvents(eventName ? filtered : events); // Show all events if no event name is selected
+        setFilteredEvents(eventName ? filtered : events); 
     };
 
     const handleEventClick = (event) => {
-        setSelectedEvent(event); // Directly set the event as selectedEvent
+        setSelectedEvent(event); 
         setModalIsOpen(true);
     };
 
@@ -99,7 +99,7 @@ const EventCalendar = () => {
     };
 
     useEffect(() => {
-        Modal.setAppElement('#root'); // Ensure this matches the ID of your root element
+        Modal.setAppElement('#root'); 
     }, []);
 
     if (loading) return <p>Loading...</p>;
@@ -142,8 +142,8 @@ const EventCalendar = () => {
               style={{ height: 500 }}
               eventPropGetter={eventStyleGetter}
               onSelectEvent={handleEventClick}
-              min={new Date(1970, 1, 1, 8, 0, 0)}  // 8:00 AM
-              max={new Date(1970, 1, 1, 22, 0, 0)} // 10:00 PM
+              min={new Date(1970, 1, 1, 8, 0, 0)}  
+              max={new Date(1970, 1, 1, 22, 0, 0)} 
 />
 
             <Modal

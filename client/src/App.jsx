@@ -48,7 +48,7 @@ function AppContent() {
           <Route path="/AddEvent" element={<Layout><AddEvent/></Layout>} />
           <Route path="/Events" element={<Layout><EventList/></Layout>} />
           <Route path="/ManageEvent/:id" element={<Layout><ManageEvent/></Layout>} />
-          <Route path="/Calendars" element={<Layout><EventCalendar/></Layout>} />
+          <Route path="/Calendars" element={<EventCalendar/>} />
 
          
           <Route path="/inbox" element={<Layout><Inbox /></Layout>} />
