@@ -20,8 +20,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-
+  
     const Toast = Swal.mixin({
       toast: true,
       position: 'top-end',
@@ -35,18 +34,33 @@ const LoginPage = () => {
     });
   
     try {
-        const response = await axios.post('http://127.0.0.1:3000/api/users/login', formData);
+      const response = await axios.post('http://127.0.0.1:3000/api/users/login', formData);
+  
+      console.log('Login Response:', response.data);
+  
+      const user = response.data.user;
+      const token = response.data.token;
+  
+      if (user && token) {
         Toast.fire({
           icon: 'success',
-          title: 'Signed up successfully'
+          title: 'Login successful!'
         });
-        setMessageType('success');
-        setMessage('Login successful!');
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
-        setUser(response.data.user);
+  
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+        setUser(user);
+  
         setFormData({ email: '', password: '' });
-        navigate('/');
+  
+        if (user.role === 'admin') {
+          navigate('/dashbord');
+        } else {
+          navigate('/');
+        }
+      } else {
+        throw new Error('Invalid login response');
+      }
     } catch (error) {
       Toast.fire({
         icon: 'error',
@@ -55,9 +69,10 @@ const LoginPage = () => {
   
       setMessageType('error');
       setMessage(error.response?.data?.error || 'An error occurred. Please try again.');
-      console.error(error.response?.data);
+      console.error('Error during login:', error);
     }
-};
+  };
+  
   return (
     <div className="container-fluid vh-100 d-flex">
       <div className="row flex-grow-1">

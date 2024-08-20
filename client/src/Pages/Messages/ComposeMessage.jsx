@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Messages.css';
+import './FloatingMessageButton.css';
+
 
 const ComposeMessage = () => {
     const [formData, setFormData] = useState({
-        sender: '',
-        recipient: '',
-        subject: '',
-        body: ''
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: ''
     });
 
     const handleChange = (e) => {
@@ -22,7 +24,7 @@ const ComposeMessage = () => {
         try {
             await axios.post('http://localhost:3000/api/messages', formData);
             alert('Message sent successfully!');
-            setFormData({ sender: '', recipient: '', subject: '', body: '' });
+            setFormData({ firstName: '', lastName: '', email: '', message: '' });
         } catch (error) {
             console.error('Error sending message:', error);
         }
@@ -32,17 +34,17 @@ const ComposeMessage = () => {
         <div className="compose-message-container">
             <h2>Compose Message</h2>
             <form onSubmit={handleSubmit}>
-                <label>Sender:</label>
-                <input type="text" name="sender" value={formData.sender} onChange={handleChange} required />
+                <label>First Name:</label>
+                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
                 
-                <label>Recipient:</label>
-                <input type="text" name="recipient" value={formData.recipient} onChange={handleChange} required />
+                <label>Last Name:</label>
+                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
                 
-                <label>Subject:</label>
-                <input type="text" name="subject" value={formData.subject} onChange={handleChange} required />
+                <label>Email:</label>
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required />
                 
-                <label>Body:</label>
-                <textarea name="body" value={formData.body} onChange={handleChange} required></textarea>
+                <label>Message:</label>
+                <textarea name="message" value={formData.message} onChange={handleChange} required></textarea>
                 
                 <button type="submit">Send</button>
             </form>

@@ -12,7 +12,7 @@ import Products from "./Pages/Dashboard/Products/ProductsList.jsx";
 import ProductDetails from "./Pages/Dashboard/Products/ProductDetails.jsx";
 import EditProduct from "./Pages/Dashboard/Products/EditProduct.jsx";
 import { CartProvider } from './components/CartContext'; 
-import { UserProvider } from './components/UserContext'
+import { UserProvider } from './components/UserContext';
 import Dashboard from "./Pages/Dashboard/Dashbord.jsx";
 import Layout from './Pages/Dashboard/Layout.jsx';
 import AddCoach from "./Pages/Dashboard/Coachs/AddCoachs.jsx";
@@ -27,6 +27,7 @@ import Inbox from "./Pages/Messages/Inbox.jsx";
 import MessageDetail from "./Pages/Messages/MessageDetail.jsx";
 import ComposeMessage from "./Pages/Messages/ComposeMessage.jsx";
 import FloatingMessageButton from "./Pages/Messages/FloatingMessageButton.jsx";
+import Chatbox from './Pages/Messages/Chatbox.jsx';
 
 function AppContent() {
   return (
@@ -49,8 +50,6 @@ function AppContent() {
           <Route path="/Events" element={<Layout><EventList/></Layout>} />
           <Route path="/ManageEvent/:id" element={<Layout><ManageEvent/></Layout>} />
           <Route path="/Calendars" element={<EventCalendar/>} />
-
-         
           <Route path="/inbox" element={<Layout><Inbox /></Layout>} />
           <Route path="/messages/:id" element={<Layout><MessageDetail /></Layout>} />
           <Route path="/compose-message" element={<Layout><ComposeMessage /></Layout>} />
@@ -58,7 +57,7 @@ function AppContent() {
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </div>
-      <FloatingMessageButton />
+      <Chatbox /> {/* Add Chatbox here */}
     </>
   );
 }
