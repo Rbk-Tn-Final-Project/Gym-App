@@ -10,13 +10,19 @@ const AddProduct = () => {
     description: '',
     quantity: '',
     price: '',
-    img: null,
+    images: [],
   });
 
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
-    if (name === 'img') {
-      setFormData({ ...formData, img: files[0] });
+    const { name, value, files } = e.target;
+
+    if (name === 'images') {
+      const selectedFiles = Array.from(files);
+      const imageStrings = selectedFiles.map(file => URL.createObjectURL(file)); // Convert files to data URLs or handle as necessary
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        images: [...prevFormData.images, ...imageStrings],
+      }));
     } else {
       setFormData({ ...formData, [name]: value });
     }
@@ -24,16 +30,16 @@ const AddProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    uploadImg()
-    const data = new FormData();
-    data.append('name', formData.name);
-    data.append('description', formData.description);
-    data.append('quantity', formData.quantity);
-    data.append('price', formData.price);
-    data.append('img', imgUrl);
+    setFormData({
+      name: formData.name,
+      description:formData.description,
+      quantity: formData.quantity,
+      price: formData.price,
+      images:  formData.images
+    })
     try {
-      const res = await axios.post('http://localhost:3000/api/product/', data);
-      console.log(res);
+      const res = await axios.post('http://localhost:3000/api/product/', formData);
+      console.log('data',formData);
     } catch (err) {
       console.error('add error:', err);
     }
@@ -119,22 +125,15 @@ const AddProduct = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="img" className="control-label">Product Image</label>
-              <div>
-                <label className="control-label small" htmlFor="img">Image (jpg/png):</label>
-                <input
-                  type="file"
-                  name="img"
-                  id="img"
-                  onChange={(e)=>{setfile(e.target.files[0])
-                    console.log(e.target.files);
-                   
-                  }}
-                  
-                />
-                 <button onClick={()=> uploadImg()}>Upload</button>
-              </div>
-            </div>
+        <label htmlFor="images" className="control-label">Product Images</label>
+        <input
+          type="file"
+          name="images"
+          id="images"
+          multiple
+          onChange={handleChange}
+        />
+      </div>
 
             <hr />
 

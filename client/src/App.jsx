@@ -27,6 +27,8 @@ import Inbox from "./Pages/Messages/Inbox.jsx";
 import MessageDetail from "./Pages/Messages/MessageDetail.jsx";
 import ComposeMessage from "./Pages/Messages/ComposeMessage.jsx";
 import FloatingMessageButton from "./Pages/Messages/FloatingMessageButton.jsx";
+import Shop from "./Pages/ProductsClient/ProductsClient.jsx";
+import ShopDetails from "./Pages/ProductsClient/ProductsClientDetails.jsx";
 import Chatbox from './Pages/Messages/Chatbox.jsx';
 
 function AppContent() {
@@ -42,6 +44,9 @@ function AppContent() {
           <Route path="/details/:id" element={<Layout><ProductDetails /></Layout>} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/shopDetails/:id" element={< ShopDetails />} />
+
           <Route path="/update/:id" element={<Layout><EditProduct /></Layout>} />
           <Route path="/AddCoach" element={<Layout><AddCoach/></Layout>} />
           <Route path="/Coachs" element={<Layout><CoachList/></Layout>} />

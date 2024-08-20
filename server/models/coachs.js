@@ -41,4 +41,4 @@ CoachList.associate = (models) => {
 };
 
 
-module.exports = CoachList;
+module.exports = {CoachList:CoachList};

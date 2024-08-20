@@ -1,4 +1,4 @@
-const CoachList = require('../models/coachs');
+const {CoachList} = require('../models/coachs');
 const Planning = require('../models/planning')
 
 // Create a new planning entry

@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const CoachList = require('./coachs')
+const {CoachList} = require('./coachs')
 
 const Planning = sequelize.define('Planning', {
     id: {
