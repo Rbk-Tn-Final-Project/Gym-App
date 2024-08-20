@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const AddProduct = () => {
-  const [file, setFile] = useState(null);
+  const [files, setFiles] = useState([]);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [quantity, setQuantity] = useState('');
@@ -30,44 +30,51 @@ const AddProduct = () => {
   };
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    setFiles([...e.target.files]);
   };
 
   const uploadImg = async () => {
-    if (!file) return '';
+    if (files.length === 0) return [];
 
-    const form = new FormData();
-    form.append('file', file);
-    form.append('upload_preset', 'd9qeel3x');
+    const uploadPromises = files.map(async (file) => {
+      const form = new FormData();
+      form.append('file', file);
+      form.append('upload_preset', 'd9qeel3x');
 
-    try {
-      const res = await axios.post('https://api.cloudinary.com/v1_1/dngpqhs3i/image/upload', form);
-      return res.data.secure_url;
-    } catch (err) {
-      console.error('Image upload error:', err);
-      return '';
-    }
+      try {
+        const res = await axios.post('https://api.cloudinary.com/v1_1/dngpqhs3i/image/upload', form);
+        return res.data.secure_url;
+      } catch (err) {
+        console.error('Image upload error:', err);
+        return '';
+      }
+    });
+
+    const uploadedImages = await Promise.all(uploadPromises);
+    return uploadedImages.filter((url) => url); 
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
-    const uploadedImageUrl = await uploadImg();
-  
-    if (!uploadedImageUrl) {
+
+    const uploadedImageUrls = await uploadImg();
+
+    if (uploadedImageUrls.length === 0) {
       console.error('Image upload failed, cannot proceed with product submission.');
       setLoading(false);
       return;
     }
-  
+
     const data = new FormData();
     data.append('name', name);
     data.append('description', description);
     data.append('quantity', quantity);
     data.append('price', price);
-    data.append('img', uploadedImageUrl);
-  
+    uploadedImageUrls.forEach((url, index) => {
+      data.append(`img${index}`, url);
+    });
+
     try {
       const res = await axios.post('http://localhost:3000/api/product/', data, {
         headers: {
@@ -83,7 +90,6 @@ const AddProduct = () => {
       setLoading(false);
     }
   };
-  
 
   return (
     <div className="container">
@@ -153,13 +159,14 @@ const AddProduct = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="img" className="control-label">Product Image</label>
+              <label htmlFor="img" className="control-label">Product Images</label>
               <div>
-                <label className="control-label small" htmlFor="img">Image (jpg/png):</label>
+                <label className="control-label small" htmlFor="img">Images (jpg/png):</label>
                 <input
                   type="file"
                   name="img"
                   id="img"
+                  multiple
                   onChange={handleFileChange}
                 />
               </div>
