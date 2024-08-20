@@ -1,4 +1,4 @@
-const CoachList = require('../models/coachs')
+const {CoachList} = require('../models/coachs')
 
 // Create a new coach
 exports.createCoach = async (req, res) => {

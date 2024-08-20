@@ -1,9 +1,8 @@
 const sequelize = require('../config/database');
 const User = require('./user');
 const Product = require('./product');
-const CoachList = require('./coachs');
+const {CoachList} = require('./coachs');
 const Planning = require('./planning');
-
 
 CoachList.associate({ Planning });
 Planning.associate({ CoachList });
@@ -17,7 +16,8 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 module.exports = {
-    User,Product,
+    User,
+    Product,
     CoachList,
     Planning,
 };

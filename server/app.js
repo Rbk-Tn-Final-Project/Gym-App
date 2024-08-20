@@ -8,6 +8,7 @@ const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/ProductRoutes');
 const messageRoutes = require('./routes/messageRoutes'); // Import message routes
 
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/messages', messageRoutes); // Add message routes
+// app.use('/api/listPr', listprRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
