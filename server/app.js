@@ -3,19 +3,37 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 const path = require('path');
 const cors = require("cors");
+const multer = require('multer');
+
 
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/ProductRoutes');
-const messageRoutes = require('./routes/messageRoutes'); // Import message routes
+const messageRoutes = require('./routes/messageRoutes'); 
 
 const app = express();
+
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads'); 
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname)); 
+    }
+});
+
+const upload = multer({ storage });
+
+
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('uploads')); 
 
-// Routes
+
 app.use('/api/users', userRoutes);
-app.use('/api/products', productRoutes);
-app.use('/api/messages', messageRoutes); // Add message routes
+app.use('/api/products', upload.single('img'), productRoutes); 
+app.use('/api/messages', messageRoutes); 
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

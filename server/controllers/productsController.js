@@ -26,12 +26,18 @@ const getRandomImagePath = () => {
     return path.join('uploads', imageFiles[randomIndex]);
   };
 
-exports.createProduct = async (req, res) => {
-    const {name, quantity, price ,description} = req.body;
-    const img = req.file;
+  exports.createProduct = async (req, res) => {
+    const { name, quantity, price, description } = req.body;
+    const img = req.file ? req.file.path : ''; 
+
     try {
-        const randomImagePath = getRandomImagePath(); // Get a random image path
-        const product = await Product.create({  img:randomImagePath ,name, quantity, price ,description});
+        const product = await Product.create({
+            img,
+            name,
+            quantity,
+            price,
+            description
+        });
         res.status(201).json(product);
     } catch (error) {
         res.status(500).json({ error: error.message });
