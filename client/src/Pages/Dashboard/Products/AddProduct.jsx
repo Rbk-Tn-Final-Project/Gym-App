@@ -8,7 +8,7 @@ const AddProduct = () => {
   const [quantity, setQuantity] = useState('');
   const [price, setPrice] = useState('');
   const [loading, setLoading] = useState(false);
-
+  const [imgUrl,setimgUrl]= useState('')
   const handleChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
@@ -43,7 +43,8 @@ const AddProduct = () => {
 
       try {
         const res = await axios.post('https://api.cloudinary.com/v1_1/dngpqhs3i/image/upload', form);
-        return res.data.secure_url;
+        setimgUrl( res.data.secure_url)
+        return res.data.secure_url
       } catch (err) {
         console.error('Image upload error:', err);
         return '';
@@ -61,26 +62,28 @@ const AddProduct = () => {
     const uploadedImageUrls = await uploadImg();
 
     if (uploadedImageUrls.length === 0) {
+      console.log(uploadedImageUrls,'uploadedImageUrlsaaaaaaaaaa');
+      
       console.error('Image upload failed, cannot proceed with product submission.');
       setLoading(false);
       return;
     }
 
-    const data = new FormData();
-    data.append('name', name);
-    data.append('description', description);
-    data.append('quantity', quantity);
-    data.append('price', price);
-    uploadedImageUrls.forEach((url, index) => {
-      data.append(`img${index}`, url);
-    });
+    // const data = new FormData();
+    // data.append('name', name);
+    // data.append('description', description);
+    // data.append('quantity', quantity);
+    // data.append('price', price);
+    // data.append('img',imgUrl)
 
     try {
-      const res = await axios.post('http://localhost:3000/api/product/', data, {
+      const res = await axios.post('http://localhost:3000/api/product/', {name:name,description:description,quantity:quantity,price:price,img:imgUrl}, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
+      console.log(imgUrl,'this the imgUrl');
+      
       console.log('Product added successfully:', res.data);
       alert('Product added successfully!');
     } catch (err) {

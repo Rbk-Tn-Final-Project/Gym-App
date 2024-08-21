@@ -27,8 +27,8 @@ const getRandomImagePath = () => {
   };
 
   exports.createProduct = async (req, res) => {
-    const { name, quantity, price, description } = req.body;
-    const img = req.file ? req.file.path : ''; 
+    const { name, quantity, price, description,img } = req.body;
+    
 
     try {
         const product = await Product.create({

@@ -22,7 +22,7 @@ import AddEvent from "./Pages/Dashboard/Planning/AddEvent.jsx";
 import EventList from "./Pages/Dashboard/Planning/EventList.jsx";
 import ManageEvent from "./Pages/Dashboard/Planning/ManageEvent.jsx";
 import EventCalendar from "./Pages/Calendar/EventCalendar.jsx";
-
+import PrivateRoute from './components/PrivateRoute';
 import Inbox from "./Pages/Messages/Inbox.jsx";
 import MessageDetail from "./Pages/Messages/MessageDetail.jsx";
 import ComposeMessage from "./Pages/Messages/ComposeMessage.jsx";
@@ -36,7 +36,7 @@ function AppContent() {
       <div className="content">
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/Dashbord" element={<Layout><Dashboard /></Layout>} />
+          <Route path="/Dashbord" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path="/products" element={<Layout><Products /></Layout>} />
           <Route path="/add" element={<Layout><AddProduct /></Layout>} />
           <Route path="/details/:id" element={<Layout><ProductDetails /></Layout>} />

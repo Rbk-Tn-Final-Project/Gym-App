@@ -5,16 +5,6 @@ import { UserContext } from '../../components/UserContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../../assets/img.jpeg';
 import Swal from 'sweetalert2';
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Typography,
-  Input,
-  Checkbox,
-  Button,
-} from "@material-tailwind/react";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -56,18 +46,19 @@ const LoginPage = () => {
           icon: 'success',
           title: 'Login successful!'
         });
-  
+      
         localStorage.setItem('token', token);
         localStorage.setItem('user', JSON.stringify(user));
         setUser(user);
-  
+      
         setFormData({ email: '', password: '' });
-  
+      
         if (user.role === 'admin') {
           navigate('/dashbord');
         } else {
           navigate('/');
         }
+      
       } else {
         throw new Error('Invalid login response');
       }
