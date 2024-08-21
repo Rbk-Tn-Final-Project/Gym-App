@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './IMCCalculator.css'
 
 function IMCCalculator() {
   const [weight, setWeight] = useState('');
@@ -9,7 +10,9 @@ function IMCCalculator() {
   const calculateBMI = (event) => {
     event.preventDefault();
     if (weight > 0 && height > 0) {
-      const bmiValue = (weight / (height * height)).toFixed(2);
+      // Convert height from cm to meters
+      const heightInMeters = height / 100;
+      const bmiValue = (weight / (heightInMeters * heightInMeters)).toFixed(2);
       setBmi(bmiValue);
       determineBMIMessage(bmiValue);
     } else {
@@ -29,16 +32,24 @@ function IMCCalculator() {
     }
   };
 
+  const resetFields = () => {
+    setWeight('');
+    setHeight('');
+    setBmi(null);
+    setMessage('');
+  };
+
   return (
-    <div>
-        <div className='imcTitle'><h1>La formule est :</h1>
+    <div className='container1'>
+      <div className='imcTitle'>
+        <h1>La formule est :</h1>
         <h3>IMC = Poids / Taille x Taille</h3>
-        </div>
-      <h2>IMC (BMI) Calculator</h2>
-      <form onSubmit={calculateBMI}>
+      </div>
+      <h2 className='h22'>IMC (BMI) Calculator</h2>
+      <form className='form1' onSubmit={calculateBMI}>
         <div>
-          <label>Weight (kg): </label>
-          <input
+          <label className='.label1'>Weight (kg): </label>
+          <input className='.input1'
             type="number"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
@@ -46,8 +57,8 @@ function IMCCalculator() {
           />
         </div>
         <div>
-          <label>Height (cm): </label>
-          <input
+          <label className='.label1'>Height (cm): </label>
+          <input className='.input1'
             type="number"
             step="0.01"
             value={height}
@@ -55,10 +66,11 @@ function IMCCalculator() {
             required
           />
         </div>
-        <button type="submit">Calculate BMI</button>
+        <button className='button1' type="submit">Calculate BMI</button>
+        <button className='button1' type="button" onClick={resetFields}>Reset</button>
       </form>
       {bmi && (
-        <div>
+        <div className='divres'>
           <h3>Your BMI: {bmi}</h3>
           <p>{message}</p>
         </div>
