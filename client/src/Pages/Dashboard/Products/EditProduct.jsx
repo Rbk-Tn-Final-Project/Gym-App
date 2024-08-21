@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+
 const EditProduct = () => {
     const { id } = useParams();
     const [formData, setFormData] = useState({
@@ -45,12 +45,11 @@ const EditProduct = () => {
         data.append('description', formData.description);
         data.append('quantity', formData.quantity);
         data.append('price', formData.price);
-        // data.append('img', formData.img);
-        console.log(data);
+        data.append('img', formData.img);
+    
         try {
           const res = await axios.put(`http://localhost:3000/api/product/${id}`, data);
-          console.log(data);
-          console.log(res.data);
+          console.log(res);
         } catch (err) {
           console.error('add error:', err);
         }

@@ -22,13 +22,11 @@ import AddEvent from "./Pages/Dashboard/Planning/AddEvent.jsx";
 import EventList from "./Pages/Dashboard/Planning/EventList.jsx";
 import ManageEvent from "./Pages/Dashboard/Planning/ManageEvent.jsx";
 import EventCalendar from "./Pages/Calendar/EventCalendar.jsx";
-
+import PrivateRoute from './components/PrivateRoute';
 import Inbox from "./Pages/Messages/Inbox.jsx";
 import MessageDetail from "./Pages/Messages/MessageDetail.jsx";
 import ComposeMessage from "./Pages/Messages/ComposeMessage.jsx";
 import FloatingMessageButton from "./Pages/Messages/FloatingMessageButton.jsx";
-import Shop from "./Pages/ProductsClient/ProductsClient.jsx";
-import ShopDetails from "./Pages/ProductsClient/ProductsClientDetails.jsx";
 import Chatbox from './Pages/Messages/Chatbox.jsx';
 
 function AppContent() {
@@ -38,15 +36,12 @@ function AppContent() {
       <div className="content">
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/Dashbord" element={<Layout><Dashboard /></Layout>} />
+          <Route path="/Dashbord" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path="/products" element={<Layout><Products /></Layout>} />
           <Route path="/add" element={<Layout><AddProduct /></Layout>} />
           <Route path="/details/:id" element={<Layout><ProductDetails /></Layout>} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/shopDetails/:id" element={< ShopDetails />} />
-
           <Route path="/update/:id" element={<Layout><EditProduct /></Layout>} />
           <Route path="/AddCoach" element={<Layout><AddCoach/></Layout>} />
           <Route path="/Coachs" element={<Layout><CoachList/></Layout>} />

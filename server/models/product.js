@@ -8,7 +8,7 @@ const Product = sequelize.define('Product', {
         autoIncrement: true,
         primaryKey: true
     },
-    images: DataTypes.JSON,
+    img: DataTypes.STRING,
     name: DataTypes.STRING,
     quantity: DataTypes.INTEGER,
     price: DataTypes.DECIMAL(10, 2),

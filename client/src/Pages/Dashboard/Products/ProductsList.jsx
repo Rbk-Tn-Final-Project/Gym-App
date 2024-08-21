@@ -61,7 +61,7 @@ const Products = () => {
                 <tr key={index} className="product">
                   <td>
                     <div className="priority">
-                      <img src={product.images[0]} alt={product.name} style={{ width: 50 }} />
+                      <img src={product.img} alt={product.name} style={{ width: 50 }} />
                     </div>
                   </td>
                   <td><div>{product.name}</div></td>
