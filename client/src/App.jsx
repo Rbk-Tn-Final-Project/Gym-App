@@ -14,7 +14,7 @@ import EditProduct from "./Pages/Dashboard/Products/EditProduct.jsx";
 import { CartProvider } from './components/CartContext'; 
 import { UserProvider } from './components/UserContext';
 import Dashboard from "./Pages/Dashboard/Dashbord.jsx";
-import Layout from './Pages/Dashboard/Layout.jsx';
+// import Layout from './Pages/Dashboard/Layout.jsx';
 import AddCoach from "./Pages/Dashboard/Coachs/AddCoachs.jsx";
 import CoachList from "./Pages/Dashboard/Coachs/CoachsList.jsx";
 import ManageCoaches from "./Pages/Dashboard/Coachs/ManageCoachs.jsx";
@@ -37,22 +37,22 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/Dashbord" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-          <Route path="/products" element={<Layout><Products /></Layout>} />
-          <Route path="/add" element={<Layout><AddProduct /></Layout>} />
-          <Route path="/details/:id" element={<Layout><ProductDetails /></Layout>} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/add" element={<AddProduct />} />
+          <Route path="/details/:id" element={<ProductDetails />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/update/:id" element={<Layout><EditProduct /></Layout>} />
-          <Route path="/AddCoach" element={<Layout><AddCoach/></Layout>} />
-          <Route path="/Coachs" element={<Layout><CoachList/></Layout>} />
-          <Route path="/ManageCoach/:id" element={<Layout><ManageCoaches/></Layout>} />
-          <Route path="/AddEvent" element={<Layout><AddEvent/></Layout>} />
-          <Route path="/Events" element={<Layout><EventList/></Layout>} />
-          <Route path="/ManageEvent/:id" element={<Layout><ManageEvent/></Layout>} />
+          <Route path="/update/:id" element={<EditProduct />} />
+          <Route path="/AddCoach" element={<AddCoach/>} />
+          <Route path="/Coachs" element={<CoachList/>} />
+          <Route path="/ManageCoach/:id" element={<ManageCoaches/>} />
+          <Route path="/AddEvent" element={<AddEvent/>} />
+          <Route path="/Events" element={<EventList/>} />
+          <Route path="/ManageEvent/:id" element={<ManageEvent/>} />
           <Route path="/Calendars" element={<EventCalendar/>} />
-          <Route path="/inbox" element={<Layout><Inbox /></Layout>} />
-          <Route path="/messages/:id" element={<Layout><MessageDetail /></Layout>} />
-          <Route path="/compose-message" element={<Layout><ComposeMessage /></Layout>} />
+          <Route path="/inbox" element={<Inbox />} />
+          <Route path="/messages/:id" element={<MessageDetail />} />
+          <Route path="/compose-message" element={<ComposeMessage />} />
           
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
