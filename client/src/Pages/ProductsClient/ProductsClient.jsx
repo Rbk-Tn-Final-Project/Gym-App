@@ -21,41 +21,37 @@ const ProductsClient = () => {
   };
 
   return (
-<div className="container">
-  <div className="row">
-    {/* <div className="filter-list">
-      <h3>Filter</h3>
-      <button className="btn btn-default filter-button active" data-filter="all">All</button>
-      <button className="btn btn-default filter-button" data-filter="news">News</button>
-      <button className="btn btn-default filter-button" data-filter="sale">Sale</button>
-    </div> */}
-  </div>
-  <div className="row">
-  {products.map((product, index) => (
-    <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 product filter">
-      <a href="/design/32">
-        <img src={product.images[0]} title="Product images" alt="Product name" />
-      </a>
-      <div className="info">
-        <div className="name">
-        {product.name}
-        </div>
-        <div className="price">
-          ${product.price}
+    <div className="container">
+      <div className="row">
+        <div className="filter-list">
+          <h3>“No pain, no gain.”</h3>
+          <h4>We provide you with the best seller of being healthy.</h4>
         </div>
       </div>
-      <div className="links">
-      {/* <Link to={`/details/${product.id}`}>Preview</Link> */}
-        <a href={`/shopDetails/${product.id}`} className="more">See details</a>
-        <a href="#" className="add-to">
-          <i className="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
-        </a>
+      <div className="row">
+        {products.map((product, index) => (
+          <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 product filter" key={index}>
+            <a href="/design/32">
+              <img src={product.images[0]} title="Product images" alt="Product name" />
+            </a>
+            <div className="info">
+              <div className="name">
+                {product.name}
+              </div>
+              <div className="price">
+                {product.price}$
+              </div>
+            </div>
+            <div className="links">
+              <a href={`/shopDetails/${product.id}`} className="more">See details</a>
+              <a href="#" className="add-to">
+                <i className="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-    ))}
-  </div>
-</div>
-
   );
 }
 
