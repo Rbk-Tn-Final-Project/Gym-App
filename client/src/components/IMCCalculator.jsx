@@ -10,7 +10,7 @@ function IMCCalculator() {
   const calculateBMI = (event) => {
     event.preventDefault();
     if (weight > 0 && height > 0) {
-      // Convert height from cm to meters
+   
       const heightInMeters = height / 100;
       const bmiValue = (weight / (heightInMeters * heightInMeters)).toFixed(2);
       setBmi(bmiValue);
