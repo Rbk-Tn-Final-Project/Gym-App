@@ -28,6 +28,11 @@ import MessageDetail from "./Pages/Messages/MessageDetail.jsx";
 import ComposeMessage from "./Pages/Messages/ComposeMessage.jsx";
 import FloatingMessageButton from "./Pages/Messages/FloatingMessageButton.jsx";
 import Chatbox from './Pages/Messages/Chatbox.jsx';
+import ProductsClient from "./Pages/ProductsClient/ProductsClient.jsx";
+import ProductsClientDetails from "./Pages/ProductsClient/ProductsClientDetails.jsx";
+
+
+
 
 function AppContent() {
   return (
@@ -53,7 +58,8 @@ function AppContent() {
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/messages/:id" element={<MessageDetail />} />
           <Route path="/compose-message" element={<ComposeMessage />} />
-          
+          <Route path="/ProductsClient" element={<ProductsClient />} />
+          <Route path="/ProductsClientDetails" element={<ProductsClientDetails />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </div>

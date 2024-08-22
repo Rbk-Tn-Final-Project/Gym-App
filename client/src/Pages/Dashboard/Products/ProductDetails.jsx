@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './ProductDetails.css'; // Assuming you have a CSS file for styling
+import './ProductDetails.css'; 
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -25,7 +25,7 @@ const ProductDetails = () => {
         try {
           await axios.delete(`http://localhost:3000/api/product/${id}`);
           console.log('success');
-          navigate('/product');
+          navigate('/products');
         } catch (error) {
           console.error('Error fetching products:', error);
         }

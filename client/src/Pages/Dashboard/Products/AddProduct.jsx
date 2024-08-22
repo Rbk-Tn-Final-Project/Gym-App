@@ -69,13 +69,6 @@ const AddProduct = () => {
       return;
     }
 
-    // const data = new FormData();
-    // data.append('name', name);
-    // data.append('description', description);
-    // data.append('quantity', quantity);
-    // data.append('price', price);
-    // data.append('img',imgUrl)
-
     try {
       const res = await axios.post('http://localhost:3000/api/product/', {name:name,description:description,quantity:quantity,price:price,img:imgUrl}, {
         headers: {

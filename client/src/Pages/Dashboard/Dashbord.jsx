@@ -47,7 +47,7 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
                 </a>
             </li>
             <li className='sidebar-list-item'>
-                <a href="/">
+                <a href="/ProductsClient">
                     <BsFillGearFill className='icon'/> VIEW SHOP
                 </a>
             </li>

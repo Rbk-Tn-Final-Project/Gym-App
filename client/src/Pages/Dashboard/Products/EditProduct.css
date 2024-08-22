@@ -1,0 +1,61 @@
+/* Add these styles in your CSS file or create a new one */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .panel {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+  }
+  
+  .panel-heading {
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .panel-body {
+    padding: 1.25rem;
+  }
+  
+  .form-horizontal .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-horizontal .form-control {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .form-group label {
+      margin-bottom: 0.5rem;
+    }
+  
+    .form-group .form-control {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 0.5rem;
+    }
+  
+    .panel-heading {
+      padding: 0.5rem 0.75rem;
+    }
+  
+    .panel-body {
+      padding: 0.75rem;
+    }
+  }
+  

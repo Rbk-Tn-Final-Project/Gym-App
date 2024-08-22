@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import './EditProduct.css'
+
+
 
 const EditProduct = () => {
     const { id } = useParams();
@@ -57,12 +60,14 @@ const EditProduct = () => {
     
       return (
         <div className="container">
-          <section className="panel panel-default">
-            <div className="panel-heading">
-              <h3 className="panel-title">Add New Product</h3>
-            </div>
-            <div className="panel-body">
-              <form onSubmit={handleSubmit} className="form-horizontal" role="form">
+        <section className="panel panel-default">
+          <div className="panel-heading">
+            <h3 className="panel-title">Edit Product</h3>
+          </div>
+          <div className="panel-body">
+            <form onSubmit={handleSubmit} className="form-horizontal" role="form">
+              
+            </form>
                 <div className="form-group">
                   <label htmlFor="name" className="control-label">Product Name</label>
                   <div>
@@ -140,7 +145,7 @@ const EditProduct = () => {
                 <div className="form-group center">
                   <button type="submit" className="btn btn-primary">Confirm</button>
                 </div>
-              </form>
+            
             </div>
           </section>
         </div>
