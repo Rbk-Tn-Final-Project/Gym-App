@@ -184,9 +184,7 @@ const ProductsClientDetails = () => {
           </div>
         </div>
       </section>
-
-    </div>
+</div>
   )
 }
-
-export default ProductsClientDetails
+export default ProductsClientDetails;

@@ -1,0 +1,95 @@
+.container1 {
+    border: solid 2px;
+    background: #fff;
+    padding: 10px 0 0 0;
+}
+
+.imcTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.imcTitle h1, .imcTitle h3 {
+    margin: 0;
+    color: #000;
+}
+
+.h22 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.form1 {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    border: solid 2px;
+    border-radius: 10px;
+    background: #bdcee0;
+}
+
+.divres {
+    margin-bottom: 5px;
+    text-align: center;
+    color: #000;
+}
+
+.label1 {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.input1 {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    
+}
+
+.button1 {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #022d5b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .imcTitle h1 {
+        font-size: 1.5rem;
+    }
+    
+    .imcTitle h3 {
+        font-size: 1rem;
+    }
+    
+    .h22 {
+        font-size: 1.25rem;
+    }
+    
+    .input1, .button1 {
+        font-size: 14px;
+    }
+    
+    .form1 {
+        padding: 15px;
+    }
+    
+    .button1 {
+        padding: 10px;
+    }
+}

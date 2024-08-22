@@ -46,18 +46,19 @@ const LoginPage = () => {
           icon: 'success',
           title: 'Login successful!'
         });
-  
+      
         localStorage.setItem('token', token);
         localStorage.setItem('user', JSON.stringify(user));
         setUser(user);
-  
+      
         setFormData({ email: '', password: '' });
-  
+      
         if (user.role === 'admin') {
           navigate('/dashbord');
         } else {
           navigate('/');
         }
+      
       } else {
         throw new Error('Invalid login response');
       }
