@@ -6,7 +6,7 @@ exports.getProducts = async (req, res) => {
         const products = await Product.findAll();
         const productsWithImages = products.map(product => ({
             ...product.dataValues,
-            imageUrl: `http://localhost:3000/api/product/${product.img.replace(/\\/g, '/')}`
+            imageUrl: `http://localhost:3000/api/product/${product.images[0].replace(/\\/g, '/')}`
         }));
         res.status(200).json(productsWithImages);
     } catch (error) {

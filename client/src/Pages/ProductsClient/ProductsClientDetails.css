@@ -396,8 +396,8 @@
   .product-detail .btn-and-quantity:after,
   .spinner:after,
   .tabs .tab-labels:after,
-  .detail-socials:after,
-  .detail-socials .social-sharing:after,
+  /* .detail-socials:after, */
+  /* .detail-socials .social-sharing:after, */
   .homepage .main-services ol:after,
   .homepage .main-text .links:after,
   .socials ul:after,
@@ -1709,9 +1709,16 @@
   .social-sharing-btn-wrapper {
       display: none
   }
+  .detail-socials {
+
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50%;
+    }
   .detail-socials .social-sharing {
-      float: right;
-      margin: 12px 0
+      float: center;
+      margin: 12px 0;
   }
   .detail-socials a {
       -moz-border-radius: 50%;

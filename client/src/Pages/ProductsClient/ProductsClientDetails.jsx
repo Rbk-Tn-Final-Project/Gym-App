@@ -76,7 +76,17 @@ const ProductsClientDetails = () => {
                       ))}
                   </div>
                   <div className="big">
-                    <span id="big-image" className="img" quickbeam="image" style={{ backgroundImage: `url(${selectedImage})`, width: "80%", height: "90%" }} data-src="//cdn.shopify.com/s/files/1/1047/6452/products/product_1024x1024.png?v=1446769025"></span>
+                    <div id="big-image" className="img" quickbeam="image" style={{ backgroundImage: `url(${selectedImage})`, width: "80%", height: "90%" }} data-src="//cdn.shopify.com/s/files/1/1047/6452/products/product_1024x1024.png?v=1446769025">
+                    <div></div>
+
+                    <div className="detail-socials">
+                      <div className="social-sharing" data-permalink="http://html-koder-test.myshopify.com/products/tommy-hilfiger-t-shirt-new-york">
+                        <a target="_blank" className="share-facebook" title="Share"></a>
+                        <a target="_blank" className="share-twitter" title="Tweet"></a>
+                        <a target="_blank" className="share-pinterest" title="Pin it"></a>
+                      </div>
+                  </div>
+                    </div>
                     <div id="banner-gallery" className="swipe">
                       <div className="swipe-wrap">
                         <div style={{ backgroundImage: "url('//cdn.shopify.com/s/files/1/1047/6452/products/product_large.png?v=1446769025')" }}></div>
@@ -85,14 +95,8 @@ const ProductsClientDetails = () => {
                         <div style={{ backgroundImage: "url('//cdn.shopify.com/s/files/1/1047/6452/products/tricko3_large.jpg?v=1447104182')" }}></div>
                       </div>
                     </div>
-                    <div className="detail-socials">
-                      <div className="social-sharing" data-permalink="http://html-koder-test.myshopify.com/products/tommy-hilfiger-t-shirt-new-york">
-                        <a target="_blank" className="share-facebook" title="Share"></a>
-                        <a target="_blank" className="share-twitter" title="Tweet"></a>
-                        <a target="_blank" className="share-pinterest" title="Pin it"></a>
-                      </div>
-                    </div>
                   </div>
+                  
                 </div>
                 <div className="right-col">
                   <div className="product-info">

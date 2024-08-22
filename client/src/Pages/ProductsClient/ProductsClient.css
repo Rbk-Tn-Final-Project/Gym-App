@@ -167,6 +167,7 @@ body {
 
 .product .links .add-to {
   margin-left: auto;
+}
 
 @media (max-width: 1200px) {
   .filter-list h3 {

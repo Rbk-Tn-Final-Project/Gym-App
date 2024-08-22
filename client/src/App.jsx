@@ -59,7 +59,7 @@ function AppContent() {
           <Route path="/messages/:id" element={<MessageDetail />} />
           <Route path="/compose-message" element={<ComposeMessage />} />
           <Route path="/ProductsClient" element={<ProductsClient />} />
-          <Route path="/ProductsClientDetails" element={<ProductsClientDetails />} />
+          <Route path="/ProductsClientDetails/:id" element={<ProductsClientDetails />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </div>
