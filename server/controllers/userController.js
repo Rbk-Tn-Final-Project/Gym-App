@@ -22,9 +22,6 @@ exports.registerUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
     const { email, password } = req.body;
-    console.log('JWT_SECRET:kkkkkkkkkkkkkkkkkkkk');
-
-    console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
     try {
         const user = await User.findOne({ where: { email } });
@@ -33,11 +30,20 @@ exports.loginUser = async (req, res) => {
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ error: 'Invalid credentials' });
 
-        const token = jwt.sign({ id: user.userId }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        user.token = token;
-        await user.save();
-        res.status(200).json({ token });
+        const token = jwt.sign({ id: user.userId, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+        // Returning both the token and user object
+        res.status(200).json({ token, user: { id: user.userId, role: user.role, email: user.email } });
     } catch (error) {
         res.status(500).json({ error: error.message });
+    }
+};
+
+exports.getAllusers = async (req, res) => {
+    try {
+        const user = await User.findAll();
+        res.status(200).json(user);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
     }
 };

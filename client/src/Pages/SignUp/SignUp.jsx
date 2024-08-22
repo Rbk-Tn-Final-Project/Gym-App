@@ -28,22 +28,22 @@ const CreateAccountPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    const Toast = Swal.mixin({
-      toast: true,
+    const confe = Swal.mixin({
+      confe: true,
       position: 'top-end',
       showConfirmButton: false,
       timer: 3000,
       timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
+      didOpen: (confe) => {
+        confe.onmouseenter = Swal.stopTimer;
+        confe.onmouseleave = Swal.resumeTimer;
       }
     });
   
     try {
       const response = await axios.post('http://127.0.0.1:3000/api/users/register', formData);
   
-      Toast.fire({
+      confe.fire({
         icon: 'success',
         title: 'Signed up successfully'
       });
@@ -59,7 +59,7 @@ const CreateAccountPage = () => {
         password: ''
       });
     } catch (error) {
-      Toast.fire({
+      confe.fire({
         icon: 'error',
         title: 'An error occurred. Please try again.'
       });
