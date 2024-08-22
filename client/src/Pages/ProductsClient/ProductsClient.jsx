@@ -45,13 +45,14 @@ const ProductsClient = () => {
             </div>
             <div className="links">
 
-              <a href={`/ProductsClientDetails/`} className="more">See details</a>
+              <a href={`/ProductsClientDetails/${product.id}`} className="more">See detailsss</a>
               <a href="#" className="add-to">
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
               </a>
             </div>
           </div>
         ))}
+        
       </div>
     </div>
   );
