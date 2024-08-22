@@ -1,4 +1,19 @@
-.d-block{
+.d-block {
     height: 75vh;
     margin-top: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .d-block {
+        height: 60vh;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .d-block {
+        height: 50vh;
+        margin-top: 15px;
+    }
 }

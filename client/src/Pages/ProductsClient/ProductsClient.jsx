@@ -33,6 +33,7 @@ const ProductsClient = () => {
           <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 product filter" key={index}>
             <a href="/design/32">
               <img src={product.images[0]} title="Product images" alt="Product name" />
+
             </a>
             <div className="info">
               <div className="name">
@@ -43,7 +44,8 @@ const ProductsClient = () => {
               </div>
             </div>
             <div className="links">
-              <a href={`/shopDetails/${product.id}`} className="more">See details</a>
+
+              <a href={`/ProductsClientDetails/`} className="more">See details</a>
               <a href="#" className="add-to">
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
               </a>

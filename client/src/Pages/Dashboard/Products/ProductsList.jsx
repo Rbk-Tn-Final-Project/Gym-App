@@ -36,6 +36,7 @@ const Products = () => {
   };
 
   return (
+    <div className='container3'>
     <div id="app">
       <header>
         <div className="tabs"></div>
@@ -58,10 +59,10 @@ const Products = () => {
             </thead>
             <tbody>
               {products.map((product, index) => (
-                <tr key={index} className="product">
+                <tr key={index} className="product1">
                   <td>
                     <div className="priority">
-                      <img src={product.images[0]} alt={product.name} style={{ width: 50 }} />
+                      <img src={product.img} alt={product.name} style={{ width: 150,height:150 }} />
                     </div>
                   </td>
                   <td><div>{product.name}</div></td>
@@ -77,6 +78,7 @@ const Products = () => {
           </table>
         </div>
       </div>
+    </div>
     </div>
   );
 };

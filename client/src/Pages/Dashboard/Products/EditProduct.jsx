@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import './EditProduct.css'
+
+
+
 const EditProduct = () => {
     const { id } = useParams();
     const [formData, setFormData] = useState({
@@ -45,12 +48,11 @@ const EditProduct = () => {
         data.append('description', formData.description);
         data.append('quantity', formData.quantity);
         data.append('price', formData.price);
-        // data.append('img', formData.img);
-        console.log(data);
+        data.append('img', formData.img);
+    
         try {
           const res = await axios.put(`http://localhost:3000/api/product/${id}`, data);
-          console.log(data);
-          console.log(res.data);
+          console.log(res);
         } catch (err) {
           console.error('add error:', err);
         }
@@ -58,12 +60,14 @@ const EditProduct = () => {
     
       return (
         <div className="container">
-          <section className="panel panel-default">
-            <div className="panel-heading">
-              <h3 className="panel-title">Add New Product</h3>
-            </div>
-            <div className="panel-body">
-              <form onSubmit={handleSubmit} className="form-horizontal" role="form">
+        <section className="panel panel-default">
+          <div className="panel-heading">
+            <h3 className="panel-title">Edit Product</h3>
+          </div>
+          <div className="panel-body">
+            <form onSubmit={handleSubmit} className="form-horizontal" role="form">
+              
+            </form>
                 <div className="form-group">
                   <label htmlFor="name" className="control-label">Product Name</label>
                   <div>
@@ -141,7 +145,7 @@ const EditProduct = () => {
                 <div className="form-group center">
                   <button type="submit" className="btn btn-primary">Confirm</button>
                 </div>
-              </form>
+            
             </div>
           </section>
         </div>
