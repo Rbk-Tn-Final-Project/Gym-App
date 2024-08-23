@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import img1 from '../assets/home2.png'
-import img2 from '../assets/home.png'
-import img3 from '../assets/home.png'
+import img1 from '../assets/hero-1.jpg'
+import img2 from '../assets/hero-2.jpg'
+
 import './Banner.css'
 
 const Banner = () => {
@@ -24,14 +24,7 @@ const Banner = () => {
                 />
               
             </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={img3}
-                    alt="Third slide"
-                />
-                
-            </Carousel.Item>
+           
         </Carousel>
     );
 };

@@ -39,7 +39,7 @@
 
 .dropdown:hover,
 .dropdown:focus {
-    border-color: #3174ad;
+    border-color: #a931ad;
     outline: none;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .rbc-toolbar {
-    background-color: #3174ad;
+    background-color: #ad3175;
     color: #fff;
     padding: 10px;
     border-radius: 8px 8px 0 0;

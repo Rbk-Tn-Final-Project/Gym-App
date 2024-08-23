@@ -56,7 +56,7 @@ const ProductDetails = () => {
           </div>
         </div>
         <div className="product-right">
-          <img src={product.images} alt="Hunter Lounge Chair" />
+          <img src={product.img} alt="Hunter Lounge Chair" />
         </div>
       </div>
     </div>
