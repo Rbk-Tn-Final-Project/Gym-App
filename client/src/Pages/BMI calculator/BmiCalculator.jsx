@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './IMCCalculator.css';
+import './BmiCalculator.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const BMICalculator = () => {
@@ -34,6 +34,24 @@ const BMICalculator = () => {
   };
 
   return (
+    <>
+     <section className="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12 text-center">
+                            <div className="breadcrumb-text">
+                                <h2>BMI calculator</h2>
+                                <div className="bt-option">
+                                    <a href="/">Home</a>
+                                    <a href="#">Pages</a>
+                                    <span>BMI calculator</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
     <section className="bmi-calculator-section spad">
       <div className="container">
         <div className="row">
@@ -138,6 +156,36 @@ const BMICalculator = () => {
         </div>
       </div>
     </section>
+    
+    <div className="gettouch-section">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-4">
+                            <div className="gt-text">
+                                <i className="fa fa-map-marker"></i>
+                                <p>333 Middle Winchendon Rd, Rindge,<br/> NH 03461</p>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                            <div className="gt-text">
+                                <i className="fa fa-mobile"></i>
+                                <ul>
+                                    <li>125-711-811</li>
+                                    <li>125-668-886</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                            <div className="gt-text email">
+                                <i className="fa fa-envelope"></i>
+                                <p>Support.gymcenter@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+    </>
   );
 };
 

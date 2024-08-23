@@ -30,7 +30,7 @@ import FloatingMessageButton from "./Pages/Messages/FloatingMessageButton.jsx";
 import Chatbox from './Pages/Messages/Chatbox.jsx';
 import ProductsClient from "./Pages/ProductsClient/ProductsClient.jsx";
 import ProductsClientDetails from "./Pages/ProductsClient/ProductsClientDetails.jsx";
-
+import BMICalculator from "./Pages/BMI calculator/BmiCalculator.jsx";
 
 
 
@@ -60,6 +60,7 @@ function AppContent() {
           <Route path="/compose-message" element={<ComposeMessage />} />
           <Route path="/ProductsClient" element={<ProductsClient />} />
           <Route path="/ProductsClientDetails" element={<ProductsClientDetails />} />
+          <Route path="/BmiCalculator" element={<BMICalculator />} />
           <Route path="/Offres" element={<Offres />} />
 
         

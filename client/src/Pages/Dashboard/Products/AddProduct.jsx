@@ -47,7 +47,7 @@ const AddProduct = () => {
         return res.data.secure_url
       } catch (err) {
         console.error('Image upload error:', err);
-        return res.data.secure_url;
+        return res;
       }
     });
 
@@ -66,7 +66,7 @@ const AddProduct = () => {
       
       console.error('Image upload failed, cannot proceed with product submission.');
       setLoading(false);
-      return;
+      return ;
     }
 
     try {

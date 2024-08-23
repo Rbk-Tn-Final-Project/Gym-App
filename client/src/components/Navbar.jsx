@@ -32,7 +32,7 @@ const NavBar = () => {
                           <Nav.Link as={Link} to="/Offres">Offres</Nav.Link>
                           
                           <Nav.Link as={Link} to="/SignUp">Sign Up</Nav.Link>
-                          <Nav.Link as={Link} to="/WishList"><i className="fas fa-heart"></i></Nav.Link>
+                          <Nav.Link as={Link} to="/BmiCalculator"><i className="fas fa-heart"></i></Nav.Link>
                           <Nav.Link as={Link} to="/card" className="cart-icon">
                               <i className="fa-solid fa-bag-shopping"></i>
                               {cartItemCount > 0 && <span className="cart-counter">{cartItemCount}</span>}
