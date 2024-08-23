@@ -62,7 +62,10 @@ const Chatbox = () => {
             return "We are open Monday to Friday from 5 AM to 10 PM, and Saturday to Sunday from 7 AM to 8 PM.";
         } else if (lowerCaseMessage.includes("personal training")) {
             return "Yes, we offer personal training sessions. You can book a session with one of our certified trainers.";
-        } else if (lowerCaseMessage.includes("sign up for a membership")) {
+        }  else if (lowerCaseMessage.includes("hello")) {
+            return "hello How can help you.";
+        }
+         else if (lowerCaseMessage.includes("sign up for a membership")) {
             return "You can sign up for a membership online through our website or by visiting our front desk.";
         } else if (lowerCaseMessage.includes("types of memberships")) {
             return "We offer monthly, quarterly, and annual memberships. You can also choose between individual, couple, or family plans.";

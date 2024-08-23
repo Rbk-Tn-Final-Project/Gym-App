@@ -19,8 +19,8 @@ const NavBar = () => {
         <div className='topPage'>
           <h4>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</h4>
         </div>
-          <Navbar bg="light" expand="lg">
-              <Container>
+          <Navbar  bg="light" expand="lg">
+              <Container className='contai'>
                   <Navbar.Brand href="/"><h2>RBK GYM</h2></Navbar.Brand>
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Collapse className="basic-navbar-nav">
@@ -29,7 +29,7 @@ const NavBar = () => {
                           <Nav.Link></Nav.Link>
                           <Nav.Link as={Link} to="/ProductsClient">Shop</Nav.Link>
                           <Nav.Link as={Link} to="/Calendars">Planning</Nav.Link>
-                          <Nav.Link as={Link} to="/About">About</Nav.Link>
+                          <Nav.Link as={Link} to="/Offres">Offres</Nav.Link>
                           
                           <Nav.Link as={Link} to="/SignUp">Sign Up</Nav.Link>
                           <Nav.Link as={Link} to="/WishList"><i className="fas fa-heart"></i></Nav.Link>

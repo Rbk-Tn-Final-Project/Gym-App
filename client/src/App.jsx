@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AddProduct from "./Pages/Dashboard/Products/AddProduct.jsx";
 import SignUp from './Pages/SignUp/SignUp.jsx';
 import LoginPage from "./Pages/Login/Login.jsx";
-import Navbar from "./components/Navbar";
+import OffCanvasMenu from "./components/Navbar";
 import Hero from './Pages/Home/Hero.jsx';
-
+import Offres from "./Pages/Offres/Offres.jsx";
 import Products from "./Pages/Dashboard/Products/ProductsList.jsx";
 import ProductDetails from "./Pages/Dashboard/Products/ProductDetails.jsx";
 import EditProduct from "./Pages/Dashboard/Products/EditProduct.jsx";
@@ -37,7 +37,7 @@ import ProductsClientDetails from "./Pages/ProductsClient/ProductsClientDetails.
 function AppContent() {
   return (
     <>
-      <Navbar />
+      <OffCanvasMenu />
       <div className="content">
         <Routes>
           <Route path="/" element={<Hero />} />
@@ -60,6 +60,11 @@ function AppContent() {
           <Route path="/compose-message" element={<ComposeMessage />} />
           <Route path="/ProductsClient" element={<ProductsClient />} />
           <Route path="/ProductsClientDetails" element={<ProductsClientDetails />} />
+          <Route path="/Offres" element={<Offres />} />
+
+        
+        
+        
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </div>
