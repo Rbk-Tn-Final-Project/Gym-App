@@ -1,0 +1,42 @@
+.choseus-section {
+	background: #0a0a0a;
+	padding-bottom: 70px;
+    color: #ffffff;
+}
+.A .fa-solid{
+    color: #ffffff;
+    font-size: 55px;
+    padding: 18px 2px ;
+}
+.cs-item {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.cs-item:hover span {
+	background: #f36100;
+	color: #ffffff;
+    
+}
+
+.cs-item span {
+	height: 90px;
+	width: 90px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	display: inline-block;
+	color: #f36100;
+	line-height: 90px;
+	text-align: center;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.cs-item h4 {
+	color: #ffffff;
+	font-size: 22px;
+	font-weight: 600;
+	margin-top: 24px;
+	margin-bottom: 16px;
+}

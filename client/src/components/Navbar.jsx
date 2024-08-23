@@ -29,10 +29,10 @@ const NavBar = () => {
                           <Nav.Link></Nav.Link>
                           <Nav.Link as={Link} to="/ProductsClient">Shop</Nav.Link>
                           <Nav.Link as={Link} to="/Calendars">Planning</Nav.Link>
-                          <Nav.Link as={Link} to="/About">About</Nav.Link>
+                          <Nav.Link as={Link} to="/Offres">Offres</Nav.Link>
                           
                           <Nav.Link as={Link} to="/SignUp">Sign Up</Nav.Link>
-                          <Nav.Link as={Link} to="/WishList"><i className="fas fa-heart"></i></Nav.Link>
+                          <Nav.Link as={Link} to="/BmiCalculator"><i className="fas fa-heart"></i></Nav.Link>
                           <Nav.Link as={Link} to="/card" className="cart-icon">
                               <i className="fa-solid fa-bag-shopping"></i>
                               {cartItemCount > 0 && <span className="cart-counter">{cartItemCount}</span>}
