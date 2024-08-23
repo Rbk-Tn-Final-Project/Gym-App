@@ -19,8 +19,8 @@ const NavBar = () => {
         <div className='topPage'>
           <h4>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</h4>
         </div>
-          <Navbar bg="light" expand="lg">
-              <Container>
+          <Navbar  bg="light" expand="lg">
+              <Container className='contai'>
                   <Navbar.Brand href="/"><h2>RBK GYM</h2></Navbar.Brand>
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Collapse className="basic-navbar-nav">
