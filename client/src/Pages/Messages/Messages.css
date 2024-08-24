@@ -1,8 +1,9 @@
 .inbox-container, .message-detail-container, .compose-message-container {
     margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
+    padding: 170px;
+    border: 1px solid #f70000;
     border-radius: 5px;
+    background: #000;
 }
 
 .message-list {
@@ -47,7 +48,7 @@
 .compose-message-container form button {
     margin-top: 20px;
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #ff0000;
     color: white;
     border: none;
     border-radius: 5px;
@@ -55,5 +56,5 @@
 }
 
 .compose-message-container form button:hover {
-    background-color: #0056b3;
+    background-color: #b30068;
 }

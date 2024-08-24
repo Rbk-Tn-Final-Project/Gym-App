@@ -7,8 +7,7 @@ import coach3 from '../assets/team-3.jpg';
 import coach4 from '../assets/team-4.jpg';
 import coach5 from '../assets/team-5.jpg';
 import coach6 from '../assets/team-6.jpg';
-import './Components.css'
-import Footer from './Footer';
+import '../../components/Components.css'
 
 const OurTeam = () => {
   const settings = {
@@ -21,7 +20,7 @@ const OurTeam = () => {
 
   return (
     <>
-    <section className="team-section spad">
+        <section className="team-section spad">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -115,9 +114,12 @@ const OurTeam = () => {
             </div>
         </div>
     </div>
-    
-    <Footer/>
+
+
+
     </>
+
+    
   );
 };
 

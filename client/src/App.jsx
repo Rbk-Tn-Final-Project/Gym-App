@@ -31,8 +31,9 @@ import Chatbox from './Pages/Messages/Chatbox.jsx';
 import ProductsClient from "./Pages/ProductsClient/ProductsClient.jsx";
 import ProductsClientDetails from "./Pages/ProductsClient/ProductsClientDetails.jsx";
 import BMICalculator from "./Pages/BMI calculator/BmiCalculator.jsx";
-
-
+import OurTeam from "./components/OurTeam.jsx";
+import Error404 from "./Pages/404/404.jsx";
+import Cart from "./Pages/card.jsx/card.jsx";
 
 function AppContent() {
   return (
@@ -61,12 +62,14 @@ function AppContent() {
           <Route path="/ProductsClient" element={<ProductsClient />} />
           <Route path="/ProductsClientDetails" element={<ProductsClientDetails />} />
           <Route path="/BmiCalculator" element={<BMICalculator />} />
+          <Route path="/OurTeam" element={<OurTeam />} />
+          <Route path="/Cart" element={<Cart/>} />
           <Route path="/Offres" element={<Offres />} />
 
         
         
         
-          <Route path="*" element={<div>404 Not Found</div>} />
+          <Route path="*" element={<Error404/>} />
         </Routes>
       </div>
       <Chatbox /> {/* Add Chatbox here */}
