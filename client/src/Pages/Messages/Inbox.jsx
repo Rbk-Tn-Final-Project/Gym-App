@@ -20,6 +20,7 @@ const Inbox = () => {
     };
 
     return (
+        <>
         <div className="inbox-container">
             <h2>Inbox</h2>
             <ul className="message-list">
@@ -33,6 +34,7 @@ const Inbox = () => {
                 ))}
             </ul>
         </div>
+        </>
     );
 };
 

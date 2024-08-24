@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const ProductsClient = () => {
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProducts();
@@ -20,6 +20,11 @@ const ProductsClient = () => {
     }
   };
 
+  const handleAddToCart = (product) => {
+    // Navigate to the cart page with the product data
+    navigate('/Cart', { state: { product } });
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -32,7 +37,7 @@ const ProductsClient = () => {
         {products.map((product, index) => (
           <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 product filter" key={index}>
             <a href="/design/32">
-            <img className='imgg' src={product.img} alt={product.name}  />
+              <img className='imgg' src={product.img} alt={product.name} />
             </a>
             <div className="info">
               <div className="name">
@@ -43,10 +48,10 @@ const ProductsClient = () => {
               </div>
             </div>
             <div className="links">
-              <a href={`/ProductsClientDetails/`} className="more">See details</a>
-              <a href="#" className="add-to">
+              <Link to={`/ProductsClientDetails/`} className="more">See details</Link>
+              <button onClick={() => handleAddToCart(product)} className="add-to">
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
-              </a>
+              </button>
             </div>
           </div>
         ))}

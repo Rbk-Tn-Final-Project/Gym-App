@@ -18,7 +18,8 @@ const Home = () => {
             <Registration/>
             <PricingPlan/>
             <OurTeam/>
-          <Footer/>
+              
+          
         </div>
     );
 };
