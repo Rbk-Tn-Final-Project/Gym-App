@@ -32,7 +32,7 @@ const CoachList = () => {
         if (window.confirm('Are you sure you want to delete this coach?')) {
             try {
                 await axios.delete(`http://127.0.0.1:3000/api/coaches/${coachId}`);
-                setCoaches(coaches.filter(coach => coach.id !== coachId)); // Remove deleted coach from the state
+                setCoaches(coaches.filter(coach => coach.id !== coachId)); 
             } catch (error) {
                 setError('Error deleting coach. Please try again.');
                 console.error('There was an error deleting the coach:', error);
@@ -73,9 +73,7 @@ const CoachList = () => {
                             <td>{coach.email}</td>
                             <td>{coach.phone}</td>
                             <td>{coach.specialty}</td>
-                            {/* <td>
-                                <img src={coach.picture} alt={`${coach.firstName} ${coach.lastName}`} className="coach-picture"/>
-                            </td> */}
+                          
                             <td>
                                 <button onClick={() => handleUpdateClick(coach)}>Update</button>
                                 <button onClick={() => handleDeleteClick(coach.id)}>Delete</button>

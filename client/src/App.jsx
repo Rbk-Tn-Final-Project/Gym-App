@@ -38,7 +38,7 @@ function AppContent() {
   return (
     <>
   
-      <div className="content">
+  
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/Dashbord" element={<Dashboard />} />
@@ -67,7 +67,7 @@ function AppContent() {
 
           <Route path="*" element={<Error404 />} />
         </Routes>
-      </div>
+     
       <Chatbox />
     </>
   );

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './ManageCoachs.css'
 
-//UPDATE COACH FORMATION//
+
 
 const ManageCoach = () => {
     const { id } = useParams();
@@ -44,7 +44,6 @@ const ManageCoach = () => {
         try {
             await axios.put(`http://127.0.0.1:3000/api/coaches/${id}`, coach);
             setMessage('Coach updated successfully!');
-            // Redirect back to the coach list after a short delay
             setTimeout(() => {
                 navigate('/Coachs');
             }, 2000);
@@ -107,15 +106,7 @@ const ManageCoach = () => {
                         onChange={handleInputChange}
                     />
                 </div>
-                {/* <div>
-                    <label>Picture URL</label>
-                    <input
-                        type="text"
-                        name="picture"
-                        value={coach.picture}
-                        onChange={handleInputChange}
-                    />
-                </div> */}
+               
                 <button type="submit">Update Coach</button>
             </form>
         </div>

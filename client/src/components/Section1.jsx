@@ -22,7 +22,7 @@ function Section1() {
             <div className="row">
                 <div className="col-lg-3 col-sm-6">
                     <div className="cs-item">
-                        <span className='A'><i class="fa-solid fa-bicycle"></i></span>
+                        <span className='A'><i className="fa-solid fa-bicycle"></i></span>
                         <h4>Modern equipment</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             dolore facilisis.</p>
