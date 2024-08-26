@@ -1,27 +1,65 @@
-
-.hs-slider.owl-carousel .owl-item.active .hs-item .hi-text span {
-	position: relative;
-	top: 0;
-	-webkit-transition: all 0.2s ease 0.2s;
-	-o-transition: all 0.2s ease 0.2s;
-	transition: all 0.2s ease 0.2s;
-	opacity: 1;
+@keyframes slideFlipIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) rotateY(-180deg) scale(0.5); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotateY(0deg) scale(1); 
+    }
 }
 
-.hs-slider.owl-carousel .owl-item.active .hs-item .hi-text h1 {
-	position: relative;
-	top: 0;
-	-webkit-transition: all 0.4s ease 0.4s;
-	-o-transition: all 0.4s ease 0.4s;
-	transition: all 0.4s ease 0.4s;
-	opacity: 1;
+.slide h3, .slide p, .slide Button {
+    animation: slideFlipIn 1.5s ease-out;
 }
 
-.hs-slider.owl-carousel .owl-item.active .hs-item .hi-text .primary-btn {
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    height: 100vh; 
+}
+
+.slide h3 {
+    font-size: 80px;
+	color: #ffffff;
+	font-weight:3700;
+	text-transform: uppercase;
+	line-height: 90px;
+	margin-bottom: 90px;
 	position: relative;
-	top: 0;
-	-webkit-transition: all 0.6s ease 0.6s;
-	-o-transition: all 0.6s ease 0.6s;
-	transition: all 0.6s ease 0.6s;
-	opacity: 1;
+	
+	transition: transform 0.3s ease;
+}
+.slide h3 strong{
+    color: #f36100;
+}
+.slide p {
+    font-size: 40px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.slide Button {
+    display: inline-block;
+    font-size: 14px;
+    padding: 17px 30px 16px;
+    color: #ffffff;
+    background: #f36100;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.slide Button:hover {
+    background: #ffffff;
+    color: #f36100;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }

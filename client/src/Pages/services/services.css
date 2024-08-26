@@ -1,0 +1,137 @@
+.about-video {
+	height: 640px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.about-video .play-btn {
+	display: inline-block;
+	height: 70px;
+	width: 70px;
+	background: #f36100;
+	border-radius: 50%;
+	line-height: 70px;
+	text-align: center;
+	font-size: 36px;
+	color: #ffffff;
+}
+
+.about-text {
+	background: #000000;
+	height: 640px;
+	padding: 120px 70px 0 70px;
+}
+
+.about-text .section-title {
+	text-align: left;
+	margin-bottom: 30px;
+}
+
+.about-text .at-desc {
+	margin-bottom: 27px;
+}
+
+.about-text .at-desc p {
+	color: #c4c4c4;
+}
+
+.about-text .about-bar .ab-item {
+	margin-bottom: 34px;
+}
+
+.about-text .about-bar .ab-item p {
+	color: #ffffff;
+	margin-bottom: 13px;
+}
+
+
+
+.testimonial-section {
+	background: #151515;
+}
+
+.ts_slider.owl-carousel .owl-item img {
+	display: inline-block;
+}
+
+.ts_slider.owl-carousel .owl-nav button {
+	height: 46px;
+	width: 46px;
+	color: #a9a9a9;
+	background: rgba(255, 255, 255, 0.1);
+	line-height: 46px;
+	text-align: center;
+	font-size: 24px;
+	position: absolute;
+	left: 30px;
+	top: 50%;
+	-webkit-transform: translateY(-23px);
+	-ms-transform: translateY(-23px);
+	transform: translateY(-23px);
+}
+
+.ts_slider.owl-carousel .owl-nav button.owl-next {
+	left: auto;
+	right: 30px;
+}
+
+.ts_slider .ts_item .ti_pic {
+	margin-bottom: 32px;
+}
+
+.ts_slider .ts_item .ti_pic img {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+}
+
+.ts_slider .ts_item .ti_text p {
+	color: #fefefe;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+
+.ts_slider .ts_item .ti_text h5 {
+	color: #ffffff;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+}
+
+.ts_slider .ts_item .ti_text .tt-rating i {
+	font-size: 12px;
+	color: #d49d09;
+}
+
+.barfiller {
+    position: relative;
+    height: 30px;
+  }
+  
+  .barfiller .fill {
+    display: block;
+    height: 100%;
+    background: #e97a04; 
+    position: relative;
+    text-align: right;
+    padding-right: 10px; 
+    line-height: 30px;
+    color: #fff; 
+  }
+  
+  .barfiller .tipWrap {
+    display: none; 
+  }
+  
+  .ab-item p {
+    margin: 0;
+    font-size: 16px;
+  }
+  

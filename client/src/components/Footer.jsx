@@ -16,10 +16,10 @@ const Footer = () => {
               </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua endisse ultrices gravida lorem.</p>
               <div className="fa-social">
-                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.facebook.com/"><i className="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/"><i className="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/"><i className="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/"><i className="fa-brands fa-square-instagram"></i></a>
                 <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail&hl=fr&service=mail&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S1933377188%3A1724377255027732&ddm=0"><i class="fa-solid fa-envelope"></i></a>
               </div>
             </div>
