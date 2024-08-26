@@ -1,10 +1,7 @@
-body {
-  padding-bottom: 4em;
-}
 
 .filter-list::before {
   content: '';
-  position: absolute;
+  
   top: 0;
   left: 0;
   right: 0;
@@ -16,8 +13,7 @@ body {
 
 .filter-list {
   display: flex;
-  flex-direction: column;
-  justify-content: center; 
+  flex-wrap: wrap;
   align-items: center; 
   text-align: center;
   height: 100%;
@@ -25,7 +21,6 @@ body {
   text-transform: uppercase;
   width: 100%;
   position: relative;
-  
   margin-bottom: 2rem;
 }
 
@@ -44,22 +39,23 @@ body {
   color: #6c7074;
   z-index: 2;
 }
-
+.col-xl-4 {
+  margin-left: 10px;
+}
 .product {
   transition: 0.5s;
   margin-bottom: 2em;
   margin-top: 3rem;
+  border: solid 1px #fff;
+  padding: 10px;
+  border-radius: 10px;
+  justify-content: space-between;
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
 }
 
 
 
-.product img {
-  width: 100%;
-  height: 300px; 
-  border-radius: 15px; 
-  object-fit: cover;
-  margin-top: 0;
-}
 
 .imgg {
   transition: 0.5s;
@@ -152,7 +148,7 @@ body {
 
 .product .links .more:hover,
 .product .links .add-to:hover {
-  background-color: #ffffff; /* Darker grey on hover */
+  background-color: #ffffff; 
 
   text-decoration: none;
   opacity: .9;

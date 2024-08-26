@@ -1,3 +1,7 @@
+.d-block {
+    height: 100vh;
+    width: 100%; 
+}
 
 .slide {
     display: flex;
@@ -7,7 +11,6 @@
     text-align: center; 
     height: 100vh; 
 }
-
 
 @keyframes slideFlipIn {
     0% {
@@ -24,11 +27,10 @@
     animation: slideFlipIn 1.5s ease-out;
 }
 
-
 .slide h3 {
     font-size: 80px;
     color: #ffffff;
-    font-weight: 3700;
+    font-weight: 700; 
     text-transform: uppercase;
     line-height: 90px;
     margin-bottom: 90px;
@@ -41,16 +43,14 @@
 }
 
 .slide p {
-    font-size: 40px;
     font-size: 20px;
     transition: transform 0.3s ease;
 }
 
-
 .slide Button {
     display: inline-block;
     font-size: 14px;
-    padding: 17px 30px 16px;
+    padding: 17px 30px;
     color: #ffffff;
     background: #f36100;
     line-height: normal;
@@ -65,9 +65,7 @@
     background: #ffffff;
     color: #f36100;
     transform: scale(1.1);
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
-
 
 @media (max-width: 1200px) {
     .slide h3 {
@@ -82,7 +80,7 @@
 
     .slide Button {
         font-size: 12px;
-        padding: 14px 25px 13px;
+        padding: 14px 25px;
     }
 }
 
@@ -99,7 +97,7 @@
 
     .slide Button {
         font-size: 11px;
-        padding: 12px 20px 11px;
+        padding: 12px 20px;
     }
 }
 
@@ -116,7 +114,7 @@
 
     .slide Button {
         font-size: 10px;
-        padding: 10px 15px 9px;
+        padding: 10px 15px;
     }
 }
 
@@ -133,6 +131,6 @@
 
     .slide Button {
         font-size: 9px;
-        padding: 8px 10px 7px;
+        padding: 8px 10px;
     }
 }
