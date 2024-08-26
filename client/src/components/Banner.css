@@ -1,3 +1,17 @@
+.d-block {
+    height: 100vh;
+    width: 100%; 
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    height: 100vh; 
+}
+
 @keyframes slideFlipIn {
     0% {
         opacity: 0;
@@ -13,32 +27,22 @@
     animation: slideFlipIn 1.5s ease-out;
 }
 
-
-.slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center; 
-    height: 100vh; 
-}
-
 .slide h3 {
     font-size: 80px;
-	color: #ffffff;
-	font-weight:3700;
-	text-transform: uppercase;
-	line-height: 90px;
-	margin-bottom: 90px;
-	position: relative;
-	
-	transition: transform 0.3s ease;
+    color: #ffffff;
+    font-weight: 700; 
+    text-transform: uppercase;
+    line-height: 90px;
+    margin-bottom: 90px;
+    position: relative;
+    transition: transform 0.3s ease;
 }
-.slide h3 strong{
+
+.slide h3 strong {
     color: #f36100;
 }
+
 .slide p {
-    font-size: 40px;
     font-size: 20px;
     transition: transform 0.3s ease;
 }
@@ -46,7 +50,7 @@
 .slide Button {
     display: inline-block;
     font-size: 14px;
-    padding: 17px 30px 16px;
+    padding: 17px 30px;
     color: #ffffff;
     background: #f36100;
     line-height: normal;
@@ -61,5 +65,72 @@
     background: #ffffff;
     color: #f36100;
     transform: scale(1.1);
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+    .slide h3 {
+        font-size: 60px;
+        line-height: 70px;
+        margin-bottom: 60px;
+    }
+
+    .slide p {
+        font-size: 30px;
+    }
+
+    .slide Button {
+        font-size: 12px;
+        padding: 14px 25px;
+    }
+}
+
+@media (max-width: 992px) {
+    .slide h3 {
+        font-size: 50px;
+        line-height: 60px;
+        margin-bottom: 50px;
+    }
+
+    .slide p {
+        font-size: 25px;
+    }
+
+    .slide Button {
+        font-size: 11px;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide h3 {
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 40px;
+    }
+
+    .slide p {
+        font-size: 20px;
+    }
+
+    .slide Button {
+        font-size: 10px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .slide h3 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 30px;
+    }
+
+    .slide p {
+        font-size: 16px;
+    }
+
+    .slide Button {
+        font-size: 9px;
+        padding: 8px 10px;
+    }
 }
