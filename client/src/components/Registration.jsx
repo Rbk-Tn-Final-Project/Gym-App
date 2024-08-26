@@ -1,5 +1,4 @@
 import React from 'react'
-import gallery from '../assets/gallery-1.jpg'
 import './Components.css'
 
 

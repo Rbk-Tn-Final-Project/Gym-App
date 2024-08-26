@@ -59,16 +59,7 @@ const AddProduct = () => {
     e.preventDefault();
     setLoading(true);
 
-    // const uploadedImageUrls = await uploadImg();
-
-    // if (uploadedImageUrls.length === 0) {
-    //   console.log(uploadedImageUrls,'uploadedImageUrlsaaaaaaaaaa');
-      
-    //   console.error('Image upload failed, cannot proceed with product submission.');
-    //   setLoading(false);
-    //   return  ;
-    // }
-
+   
     try {
       const res = await axios.post('http://localhost:3000/api/product/', {name:name,description:description,quantity:quantity,price:price,img:imgUrl}, {
         headers: {

@@ -17,18 +17,15 @@ body {
 .filter-list {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
+  justify-content: center; 
+  align-items: center; 
   text-align: center;
-  height: 100%; /* Ensure the block takes full height */
+  height: 100%;
   padding: 5rem 0;
   text-transform: uppercase;
   width: 100%;
   position: relative;
-  background-image: url('https://img.freepik.com/free-photo/top-view-perfectly-ordered-fitness-items_23-2150321809.jpg');
-  background-size: 100%; 
-  background-position: center;
-  background-repeat: no-repeat;
+  
   margin-bottom: 2rem;
 }
 
@@ -51,21 +48,16 @@ body {
 .product {
   transition: 0.5s;
   margin-bottom: 2em;
-  margin-top: 3rem; 
+  margin-top: 3rem;
 }
 
-.product:hover {
-  -ms-transform: scale(1.25, 1.25);
-  -webkit-transform: scale(1.25, 1.25);
-  transform: scale(1.25, 1.25);
-  z-index: 9;
-}
+
 
 .product img {
   width: 100%;
-  height: 300px; /* Reduced height for smaller images */
-  border-radius: 15px; /* Rounded corners for the cart-like appearance */
-  object-fit: cover; /* Ensures the image covers the container without distortion */
+  height: 300px; 
+  border-radius: 15px; 
+  object-fit: cover;
   margin-top: 0;
 }
 
@@ -88,24 +80,24 @@ body {
 
 .product .info {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Center items vertically */
-  align-items: center; /* Center items horizontally */
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
   padding: 0.5em 1em;
   margin: 0 0 0.5em 0;
-  position: relative; /* Add relative positioning */
-
-  background-color: #fff;
+  position: relative;
+  border: solid 2px #fff;
+  border-radius: 10px;
+  background-color: transparent;
 }
 
 .product .info::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust position to the center */
-  width: 80%; /* Adjust this value to make the line shorter or longer */
-  border-bottom: 1px solid #d0d0d0; /* Thinner grey border */
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 80%; 
 
 }
 
@@ -113,15 +105,15 @@ body {
   font-size: 1.3em;
   font-weight: 400;
   line-height: 1.4em;
-  color: #2d7bb5;
-  text-align: center; /* Center text horizontally */
+  color: #ffffff;
+  text-align: center; 
 
 }
 
 .product .info .price {
   font-size: 1.5em;
   font-weight: 600;
-  color: #75b546;
+  color: #e47c59;
 
   text-align: center;
 }
@@ -135,19 +127,20 @@ body {
 .product .links {
   display: flex;
   flex-direction: row;
-  padding: 0.5em 1em;
-  background-color: #fff;
+  padding: 0.5em 0.5em;
+  background-color: transparent;
 }
 
 .product .links .more,
 .product .links .add-to {
 
   border-radius: 5px;
-  background-color: #e0e0e0;
-  padding: 0.5em 0.5em 0 0.5em;
+  border: solid 1px #fff;
+  background-color: #b0b0b0;
+  padding: 0.5em 0.5em 0.4em 0.5em;
   text-transform: uppercase;
   text-align: center;
-  color: #333;
+  color: #000000;
   font-weight: 600;
   transition: background-color 0.3s, opacity 0.3s;
   margin: 5px;
@@ -159,7 +152,7 @@ body {
 
 .product .links .more:hover,
 .product .links .add-to:hover {
-  background-color: #b0b0b0; /* Darker grey on hover */
+  background-color: #ffffff; /* Darker grey on hover */
 
   text-decoration: none;
   opacity: .9;

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import './BmiCalculator.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Navbar from "../../components/Navbar";
 const BMICalculator = () => {
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
   const [age, setAge] = useState("");
-  const [sex, setSex] = useState("");
   const [bmi, setBmi] = useState(null);
   const [status, setStatus] = useState("");
 
@@ -35,6 +34,7 @@ const BMICalculator = () => {
 
   return (
     <>
+    <Navbar/>
      <section className="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
                 <div className="container">
                     <div className="row">
@@ -96,7 +96,7 @@ const BMICalculator = () => {
             </div>
             <div className="chart-calculate-form">
               <p>
-                HELLO ASBA
+                HELLO 
               </p>
               <form onSubmit={calculateBMI}>
                 <div className="row">
@@ -130,16 +130,7 @@ const BMICalculator = () => {
                       onChange={(e) => setAge(e.target.value)}
                     />
                   </div>
-                  <div className="col-sm-6">
-                    <label htmlFor="sex">Sex:</label>
-                    <input
-                      id="sex"
-                      type="text"
-                      placeholder="Sex"
-                      value={sex}
-                      onChange={(e) => setSex(e.target.value)}
-                    />
-                  </div>
+                
                   <div className="col-lg-12">
                     <button type="submit">Calculate</button>
                   </div>

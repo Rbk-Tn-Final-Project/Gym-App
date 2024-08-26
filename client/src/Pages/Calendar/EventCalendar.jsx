@@ -5,6 +5,8 @@ import axios from 'axios';
 import Modal from 'react-modal';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './EventCalendar.css';
+import Navbar from '../../components/Navbar';
+
 
 const localizer = momentLocalizer(moment);
 
@@ -106,6 +108,8 @@ const EventCalendar = () => {
     if (error) return <p>{error}</p>;
 
     return (
+        <>
+        <Navbar/>
         <div className="calendar-container">
             <h1>Event Calendar</h1>
             <div className="dropdown-container">
@@ -166,6 +170,7 @@ const EventCalendar = () => {
                 )}
             </Modal>
         </div>
+        </>
     );
 };
 

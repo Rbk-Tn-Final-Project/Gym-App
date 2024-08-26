@@ -31,31 +31,30 @@ import Chatbox from './Pages/Messages/Chatbox.jsx';
 import ProductsClient from "./Pages/ProductsClient/ProductsClient.jsx";
 import ProductsClientDetails from "./Pages/ProductsClient/ProductsClientDetails.jsx";
 import BMICalculator from "./Pages/BMI calculator/BmiCalculator.jsx";
-import OurTeam from "./components/OurTeam.jsx";
+import OurTeam from "./Pages/Our Team/OurTeam.jsx";
 import Error404 from "./Pages/404/404.jsx";
 import Cart from "./Pages/card.jsx/card.jsx";
-
 function AppContent() {
   return (
     <>
-      <OffCanvasMenu />
+  
       <div className="content">
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/Dashbord" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          <Route path="/Dashbord" element={<Dashboard />} />
           <Route path="/products" element={<Products />} />
           <Route path="/add" element={<AddProduct />} />
           <Route path="/details/:id" element={<ProductDetails />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/update/:id" element={<EditProduct />} />
-          <Route path="/AddCoach" element={<AddCoach/>} />
-          <Route path="/Coachs" element={<CoachList/>} />
-          <Route path="/ManageCoach/:id" element={<ManageCoaches/>} />
-          <Route path="/AddEvent" element={<AddEvent/>} />
-          <Route path="/Events" element={<EventList/>} />
-          <Route path="/ManageEvent/:id" element={<ManageEvent/>} />
-          <Route path="/Calendars" element={<EventCalendar/>} />
+          <Route path="/AddCoach" element={<AddCoach />} />
+          <Route path="/Coachs" element={<CoachList />} />
+          <Route path="/ManageCoach/:id" element={<ManageCoaches />} />
+          <Route path="/AddEvent" element={<AddEvent />} />
+          <Route path="/Events" element={<EventList />} />
+          <Route path="/ManageEvent/:id" element={<ManageEvent />} />
+          <Route path="/Calendars" element={<EventCalendar />} />
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/messages/:id" element={<MessageDetail />} />
           <Route path="/compose-message" element={<ComposeMessage />} />
@@ -63,19 +62,17 @@ function AppContent() {
           <Route path="/ProductsClientDetails" element={<ProductsClientDetails />} />
           <Route path="/BmiCalculator" element={<BMICalculator />} />
           <Route path="/OurTeam" element={<OurTeam />} />
-          <Route path="/Cart" element={<Cart/>} />
+          <Route path="/Cart" element={<Cart />} />
           <Route path="/Offres" element={<Offres />} />
 
-        
-        
-        
-          <Route path="*" element={<Error404/>} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
-      <Chatbox /> {/* Add Chatbox here */}
+      <Chatbox />
     </>
   );
 }
+
 
 function App() {
   return (

@@ -1,0 +1,197 @@
+.team-section {
+  
+    padding: 10px;
+  }
+  
+  .team-title .section-title {
+    text-align: left;
+    float: left;
+  }
+  
+  .primary-btn.appoinment-btn {
+    background: transparent;
+    color: #e6e6e6;
+    border: 2px solid #ffffff;
+    float: right;
+    margin-top: 50px;
+  }
+  
+  .ts-slider .slick-dots {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .ts-slider .slick-dots li button::before {
+    font-size: 10px;
+    color: #5c5c5c;
+  }
+  
+  .ts-slider .slick-dots .slick-active button::before {
+    color: #f36100;
+  }
+  
+  .ts-item {
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    width: 450px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .ts-item:hover .ts_text {
+    bottom: 0;
+  }
+  
+  .ts-item .ts_text {
+    padding: 40px 0 60px;
+    text-align: center;
+    background: #0a0a0a;
+    border-top: 4px solid #464646;
+    transform: skewY(-5deg);
+    position: absolute;
+    left: 0;
+    bottom: -250px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .ts-item .ts_text h4 {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 14px;
+    transform: skewY(5deg);
+  }
+  
+  .ts-item .ts_text span {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    transform: skewY(5deg);
+  }
+  
+  .slick-slider {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 0 auto;
+  }
+ 
+ 
+ 
+  .breadcrumb-section {
+	height: 500px;
+	padding-top: 230px;
+    
+}
+
+.breadcrumb-text h2 {
+	font-size: 60px;
+	color: #ffffff;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+.breadcrumb-text .bt-option a {
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: 700;
+	display: inline-block;
+	position: relative;
+	margin-right: 20px;
+}
+
+.breadcrumb-text .bt-option a:after {
+	position: absolute;
+	right: -14px;
+	top: 6px;
+	font-family: "FontAwesome";
+	content: "";
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.breadcrumb-text .bt-option span {
+	font-size: 18px;
+	color: #f36100;
+	font-weight: 700;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+	.breadcrumb-section {
+		height: 300px;
+		padding-top: 150px;
+	}
+	.breadcrumb-text h2 {
+		font-size: 40px;
+	}
+	.breadcrumb-text .bt-option a, .breadcrumb-text .bt-option span {
+		font-size: 16px;
+		margin-right: 15px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.breadcrumb-section {
+		height: 200px;
+		padding-top: 100px;
+	}
+	.breadcrumb-text h2 {
+		font-size: 30px;
+	}
+	.breadcrumb-text .bt-option a, .breadcrumb-text .bt-option span {
+		font-size: 14px;
+		margin-right: 10px;
+	}
+}
+
+
+  @media (max-width: 768px) {
+
+
+  .ts-item {
+    height: 350px;
+    width: 350px;
+  }
+
+  .slick-slider {
+    max-width: 350px;
+  }
+
+  .primary-btn.appoinment-btn {
+    float: none;
+    display: block;
+    margin: 10px auto;
+  }
+
+
+  }
+
+
+  @media (max-width: 480px) {
+  .ts-item {
+    height: 250px;
+    width: 250px;
+  }
+
+  .slick-slider {
+    max-width: 250px;
+  }
+
+  .ts-item .ts_text {
+    padding: 20px 0 40px;
+  }
+
+  .ts-item .ts_text h4 {
+    font-size: 16px;
+  }
+
+  .ts-item .ts_text span {
+    font-size: 10px;
+  }
+  }
