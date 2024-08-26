@@ -33,9 +33,7 @@ function PricingPlan() {
                             <li>Month to mouth</li>
                             <li>No time restriction</li>
                         </ul>
-                        {/* <a href="#" className="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" className="thumb-icon"><i className="fa fa-picture-o"></i></a>
-                    */}
+                      
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-8">
@@ -55,9 +53,7 @@ function PricingPlan() {
                             <li>Month to mouth</li>
                             <li>No time restriction</li>
                         </ul>
-                        {/* <a href="#" className="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" className="thumb-icon"><i className="fa fa-picture-o"></i></a>
-                    */}
+                     
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-8">
@@ -77,8 +73,7 @@ function PricingPlan() {
                             <li>Month to mouth</li>
                             <li>No time restriction</li>
                         </ul>
-                        {/* <a href="#" className="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" className="thumb-icon"><i className="fa fa-picture-o"></i></a> */}
+                       
                     </div>
                 </div>
             </div>

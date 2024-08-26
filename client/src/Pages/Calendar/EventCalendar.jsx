@@ -7,7 +7,6 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './EventCalendar.css';
 import Navbar from '../../components/Navbar';
 
-
 const localizer = momentLocalizer(moment);
 
 const EventCalendar = () => {
@@ -18,7 +17,7 @@ const EventCalendar = () => {
     const [error, setError] = useState('');
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedCoach, setSelectedCoach] = useState('');
-    const [selectedEventName, setSelectedEventName] = useState(''); 
+    const [selectedEventName, setSelectedEventName] = useState('');
     const [coaches, setCoaches] = useState([]);
 
     useEffect(() => {
@@ -38,7 +37,7 @@ const EventCalendar = () => {
                         id: event.id,
                         title: event.eventName,
                         start: new Date(`${event.eventDate}T${event.eventTime}`),
-                        end: new Date(new Date(`${event.eventDate}T${event.eventTime}`).getTime() + 60 * 60 * 1000), 
+                        end: new Date(new Date(`${event.eventDate}T${event.eventTime}`).getTime() + 60 * 60 * 1000),
                         location: event.location,
                         description: event.description,
                         coach: coach ? `${coach.firstName || ''} ${coach.lastName || ''}` : 'N/A',
@@ -61,25 +60,28 @@ const EventCalendar = () => {
     const handleCoachChange = (e) => {
         const coachName = e.target.value;
         setSelectedCoach(coachName);
-
-        const filtered = events.filter(event =>
-            event.coach === coachName
-        );
-        setFilteredEvents(coachName ? filtered : events); 
+        filterEvents(coachName, selectedEventName);
     };
 
     const handleEventNameChange = (e) => {
         const eventName = e.target.value;
         setSelectedEventName(eventName);
+        filterEvents(selectedCoach, eventName);
+    };
 
-        const filtered = events.filter(event =>
-            event.title === eventName
-        );
-        setFilteredEvents(eventName ? filtered : events); 
+    const filterEvents = (coachName, eventName) => {
+        let filtered = events;
+        if (coachName) {
+            filtered = filtered.filter(event => event.coach === coachName);
+        }
+        if (eventName) {
+            filtered = filtered.filter(event => event.title === eventName);
+        }
+        setFilteredEvents(filtered);
     };
 
     const handleEventClick = (event) => {
-        setSelectedEvent(event); 
+        setSelectedEvent(event);
         setModalIsOpen(true);
     };
 
@@ -101,7 +103,7 @@ const EventCalendar = () => {
     };
 
     useEffect(() => {
-        Modal.setAppElement('#root'); 
+        Modal.setAppElement('#root');
     }, []);
 
     if (loading) return <p>Loading...</p>;
@@ -110,65 +112,85 @@ const EventCalendar = () => {
     return (
         <>
         <Navbar/>
-        <div className="calendar-container">
-            <h1>Event Calendar</h1>
-            <div className="dropdown-container">
-                <select
-                    value={selectedCoach}
-                    onChange={handleCoachChange}
-                    className="dropdown"
-                >
-                    <option value="">All Coaches</option> 
-                    {coaches.map(coach => (
-                        <option key={coach.id} value={`${coach.firstName} ${coach.lastName}`}>
-                            {coach.firstName} {coach.lastName}
-                        </option>
-                    ))}
-                </select>
-                <select
-                    value={selectedEventName}
-                    onChange={handleEventNameChange}
-                    className="dropdown"
-                >
-                    <option value="">All Events</option> 
-                    {events.map(event => (
-                        <option key={event.id} value={event.title}>
-                            {event.title}
-                        </option>
-                    ))}
-                </select>
-            </div>
-            <Calendar
-              localizer={localizer}
-              events={filteredEvents}
-              startAccessor="start"
-              endAccessor="end"
-              style={{ height: 500 }}
-              eventPropGetter={eventStyleGetter}
-              onSelectEvent={handleEventClick}
-              min={new Date(1970, 1, 1, 8, 0, 0)}  
-              max={new Date(1970, 1, 1, 22, 0, 0)} 
-/>
-
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                contentLabel="Event Details"
-                className="modal-content"
-                overlayClassName="modal-overlay"
-            >
-                {selectedEvent && (
-                    <div>
-                        <h2>{selectedEvent.title}</h2>
-                        <p><strong>Date:</strong> {selectedEvent.start.toDateString()}</p>
-                        <p><strong>Time:</strong> {selectedEvent.start.toLocaleTimeString()}</p>
-                        <p><strong>Location:</strong> {selectedEvent.location}</p>
-                        <p><strong>Description:</strong> {selectedEvent.description}</p>
-                        <p><strong>Coach:</strong> {selectedEvent.coach || 'N/A'}</p>
-                        <button onClick={closeModal}>Close</button>
+        <section className="breadcrumb-section set-bg">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12 text-center">
+                        <div className="breadcrumb-text">
+                            <h2>Our Classes</h2>
+                            <div className="bt-option">
+                                <a href="./">Home</a>
+                                <a href="#">Pages</a>
+                                <span>Our Classes</span>
+                            </div>
+                        </div>
                     </div>
-                )}
-            </Modal>
+                </div>
+            </div>
+        </section>
+        <div className='coo'>
+            <div className="calendar-container">
+                <h1>Event Calendar</h1>
+                <div className="dropdown-container">
+                    <select
+                        value={selectedCoach}
+                        onChange={handleCoachChange}
+                        className="dropdown"
+                        aria-label="Select Coach"
+                    >
+                        <option value="">All Coaches</option>
+                        {coaches.map(coach => (
+                            <option key={coach.id} value={`${coach.firstName} ${coach.lastName}`}>
+                                {coach.firstName} {coach.lastName}
+                            </option>
+                        ))}
+                    </select>
+                    <select
+                        value={selectedEventName}
+                        onChange={handleEventNameChange}
+                        className="dropdown"
+                        aria-label="Select Event"
+                    >
+                        <option value="">All Events</option>
+                        {events.map(event => (
+                            <option key={event.id} value={event.title}>
+                                {event.title}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <Calendar
+                    localizer={localizer}
+                    events={filteredEvents}
+                    startAccessor="start"
+                    endAccessor="end"
+                    style={{ height: 500 }}
+                    eventPropGetter={eventStyleGetter}
+                    onSelectEvent={handleEventClick}
+                    min={new Date(1970, 1, 1, 8, 0, 0)}
+                    max={new Date(1970, 1, 1, 22, 0, 0)}
+                />
+
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    contentLabel="Event Details"
+                    className="modal-content"
+                    overlayClassName="modal-overlay"
+                >
+                    {selectedEvent && (
+                        <div>
+                            <h2>{selectedEvent.title}</h2>
+                            <p><strong>Date:</strong> {selectedEvent.start.toDateString()}</p>
+                            <p><strong>Time:</strong> {selectedEvent.start.toLocaleTimeString()}</p>
+                            <p><strong>Location:</strong> {selectedEvent.location}</p>
+                            <p><strong>Description:</strong> {selectedEvent.description}</p>
+                            <p><strong>Coach:</strong> {selectedEvent.coach || 'N/A'}</p>
+                            <button onClick={closeModal}>Close</button>
+                        </div>
+                    )}
+                </Modal>
+            </div>
         </div>
         </>
     );

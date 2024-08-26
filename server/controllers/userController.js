@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
 require('dotenv').config();
+
 exports.registerUser = async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
 
@@ -14,11 +15,17 @@ exports.registerUser = async (req, res) => {
             password: hashedPassword,
             role: 'user'
         });
-        res.status(201).json(user);
+
+        const token = jwt.sign({ id: user.userId, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+        
+        res.status(201).json({ token, user: { id: user.userId, role: user.role, email: user.email } });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error(error); 
+        res.status(500).json({ error: 'An error occurred while registering the user' });
     }
 };
+
 
 exports.loginUser = async (req, res) => {
     const { email, password } = req.body;
@@ -32,7 +39,7 @@ exports.loginUser = async (req, res) => {
 
         const token = jwt.sign({ id: user.userId, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-        // Returning both the token and user object
+       
         res.status(200).json({ token, user: { id: user.userId, role: user.role, email: user.email } });
     } catch (error) {
         res.status(500).json({ error: error.message });
