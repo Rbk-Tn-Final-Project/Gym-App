@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import image from '../../assets/img.jpeg';
 import './SignUp.css'
 import Swal from 'sweetalert2';
-
+import Navbar from '../../components/Navbar';
 
 
 
@@ -73,6 +72,7 @@ const CreateAccountPage = () => {
 
   return (
     <>
+    <Navbar/>
     <section className="breadcrumb-section set-bg" >
         <div className="container">
             <div className="row">
@@ -151,13 +151,14 @@ const CreateAccountPage = () => {
           </div>
         </div>
         <div className="map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12087.069761554938!2d-74.2175599360452!3d40.767139456514954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c254b5958982c3%3A0xb6ab3931055a2612!2sEast%20Orange%2C%20NJ%2C%20USA!5e0!3m2!1sen!2sbd!4v1581710470843!5m2!1sen!2sbd"
-            height="350"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            title="Google Map"
-          ></iframe>
+        <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d128486.88929072828!2d10.13115747920261!3d36.80649457645492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd34ff9f9a6e71%3A0x6d1b51e3b2d37877!2sTunis%2C%20Tunisia!5e0!3m2!1sen!2sus!4v1693057892712!5m2!1sen!2sus"
+  height="350"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  title="Google Map"
+></iframe>
+
         </div>
       </div>
     </section>

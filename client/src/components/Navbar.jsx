@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react'; // Correctly import useState and useContext
+import React, { useState, useContext } from 'react'; 
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 import '@fortawesome/fontawesome-free/css/all.css';
-import { UserContext } from '../components/UserContext'; // Import UserContext correctly
+import { UserContext } from '../components/UserContext'; 
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

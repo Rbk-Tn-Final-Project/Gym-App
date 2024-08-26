@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './ProductsClient.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import Navbar from '../../components/Navbar';
 
 const ProductsClient = () => {
   const [products, setProducts] = useState([]);
@@ -21,23 +22,38 @@ const ProductsClient = () => {
   };
 
   const handleAddToCart = (product) => {
-    // Navigate to the cart page with the product data
     navigate('/Cart', { state: { product } });
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="filter-list">
-          <h3>“No pain, no gain.”</h3>
-          <h4>We provide you with the best seller of being healthy.</h4>
-        </div>
-      </div>
+    < >
+    <Navbar/>
+    <div className='team-section'>
+       <section className="breadcrumb-section set-bg">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 text-center">
+                <div className="breadcrumb-text">
+                  <h2>Our shop</h2>
+                  <div className="bt-option">
+                    <a href="./">Home</a>
+                    <a href="#">Pages</a>
+                    <span>Our Shop</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <div className="container">
+     
       <div className="row">
         {products.map((product, index) => (
           <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 product filter" key={index}>
             <a href="/design/32">
-              <img className='imgg' src={product.img} alt={product.name} />
+            <img className='imgg' src={product.img} alt={product.name}  />
             </a>
             <div className="info">
               <div className="name">
@@ -48,15 +64,46 @@ const ProductsClient = () => {
               </div>
             </div>
             <div className="links">
-              <Link to={`/ProductsClientDetails/`} className="more">See details</Link>
-              <button onClick={() => handleAddToCart(product)} className="add-to">
+              <a href={`/ProductsClientDetails/`} className="more">See details</a>
+              <a href="#" className="add-to">
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
-              </button>
+              </a>
             </div>
           </div>
         ))}
       </div>
     </div>
+        <div className="gettouch-section">
+        <div className="container">
+            <div className="row">
+                <div className="col-md-4">
+                    <div className="gt-text">
+                        <i className="fa fa-map-marker"></i>
+                        <p>333 Middle Winchendon Rd, Rindge,<br/> NH 03461</p>
+                    </div>
+                </div>
+                <div className="col-md-4">
+                    <div className="gt-text">
+                        <i className="fa fa-mobile"></i>
+                        <ul>
+                            <li>125-711-811</li>
+                            <li>125-668-886</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="col-md-4">
+                    <div className="gt-text email">
+                        <i className="fa fa-envelope"></i>
+                        <p>Support.gymcenter@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </>
+   
+    
   );
 }
 
