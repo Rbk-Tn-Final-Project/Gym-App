@@ -34,6 +34,10 @@ import BMICalculator from "./Pages/BMI calculator/BmiCalculator.jsx";
 import OurTeam from "./Pages/Our Team/OurTeam.jsx";
 import Error404 from "./Pages/404/404.jsx";
 import Cart from "./Pages/card.jsx/card.jsx";
+import Services from "./Pages/services/services.jsx";
+
+
+
 function AppContent() {
   return (
     <>
@@ -64,6 +68,7 @@ function AppContent() {
           <Route path="/OurTeam" element={<OurTeam />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Offres" element={<Offres />} />
+          <Route path="/services" element={<Services />} />
 
           <Route path="*" element={<Error404 />} />
         </Routes>

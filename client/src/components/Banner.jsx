@@ -17,7 +17,7 @@ const Banner = () => {
                 <p>Shape your body</p>
                     <h3>Be <strong>strong</strong> traning hard</h3>
                   
-                    <Button variant="primary">Learn More</Button>
+                    <Button variant="primary"><a href="/services">Learn More</a></Button>
                 </Carousel.Caption>
             </Carousel.Item>
            
@@ -31,7 +31,7 @@ const Banner = () => {
                 <p>Shape your body</p>
                     <h3>Be <strong>strong</strong> traning hard</h3>
                   
-                    <Button variant="primary">Learn More</Button>
+                    <Button variant="primary"><a href="/services">Learn More</a></Button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
