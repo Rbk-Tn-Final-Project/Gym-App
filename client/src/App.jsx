@@ -7,7 +7,6 @@ import SignUp from './Pages/SignUp/SignUp.jsx';
 import LoginPage from "./Pages/Login/Login.jsx";
 import OffCanvasMenu from "./components/Navbar";
 import Hero from './Pages/Home/Hero.jsx';
-import Offres from "./Pages/Offres/Offres.jsx";
 import Products from "./Pages/Dashboard/Products/ProductsList.jsx";
 import ProductDetails from "./Pages/Dashboard/Products/ProductDetails.jsx";
 import EditProduct from "./Pages/Dashboard/Products/EditProduct.jsx";
@@ -67,7 +66,6 @@ function AppContent() {
           <Route path="/BmiCalculator" element={<BMICalculator />} />
           <Route path="/OurTeam" element={<OurTeam />} />
           <Route path="/Cart" element={<Cart />} />
-          <Route path="/Offres" element={<Offres />} />
           <Route path="/services" element={<Services />} />
 
           <Route path="*" element={<Error404 />} />

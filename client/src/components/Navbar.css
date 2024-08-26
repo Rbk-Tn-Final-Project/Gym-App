@@ -1,4 +1,4 @@
-/* Header Section */
+
 .header-section {
 	position: absolute;
 	left: 0;
@@ -9,12 +9,12 @@
 	z-index: 99;
   }
   
-  /* Logo */
+ 
   .logo a {
 	display: inline-block;
   }
   
-  /* Navigation Menu */
+
   .nav-menu {
 	text-align: center;
 	padding-top: 55px;
@@ -99,7 +99,6 @@
 	transition: all 0.3s;
   }
   
-  /* Top Option */
   .top-option {
 	text-align: right;
 	padding: 9px 0;
@@ -138,7 +137,6 @@
 	margin-left: 15px;
   }
   
- /* Offcanvas Menu */
 
  .canvas-open, .offcanvas-menu-wrapper {
     display: none;
@@ -147,7 +145,7 @@
   
   
   
-  /* Responsive Styles */
+
   @media (max-width: 992px) {
 	.header-section {
 	  padding-top: 20px;
