@@ -1,0 +1,86 @@
+.section-404 {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: rgba(0, 0, 0, 0.9);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.text-404 {
+	text-align: center;
+}
+
+.text-404 h1 {
+	font-size: 200px;
+	color: #ffffff;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin-bottom: 75px;
+}
+
+
+.text-404 p {
+	font-size: 20px;
+	color: #c4c4c4;
+	margin-bottom: px;
+}
+
+.text-404 .search-404 {
+	position: relative;
+	width: 470px;
+	margin: 0 auto 35px;
+}
+
+
+
+
+
+.text-404 .search-404 button {
+	font-size: 16px;
+	color: #f7f7f7;
+	background: transparent;
+	border: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 11px 20px 11px;
+}
+
+.text-404 a {
+	font-size: 25px;
+	color: #ffffff;
+	font-weight: 700;
+    border: solid 2px #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+	text-transform: uppercase;
+	position: relative;
+	display: inline-block;
+    transition: 0.5s;
+}
+.text-404 a:hover{
+    background: #ffffff;
+    color: #252525;
+}
+.text-404 a:after {
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	height: 1px;
+	width: 100%;
+	background: #252525;
+	content: "";
+}
+
+.text-404 a i {
+	color: #f36100;
+	margin-right: 5px;
+    transition: 0.5s;
+}
+

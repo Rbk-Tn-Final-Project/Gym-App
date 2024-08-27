@@ -93,15 +93,7 @@ const AddCoach = () => {
                         onChange={handleInputChange}
                     />
                 </div>
-                {/* <div>
-                    <label>Picture URL</label>
-                    <input
-                        type="text"
-                        name="picture"
-                        value={coach.picture}
-                        onChange={handleInputChange}
-                    />
-                </div> */}
+               
                 <button type="submit">Add Coach</button>
             </form>
         </div>

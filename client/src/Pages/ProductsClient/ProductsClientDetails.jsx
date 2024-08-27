@@ -78,7 +78,7 @@ const ProductsClientDetails = () => {
                       <a>Free shipping</a>
                     </div>
                     <div className="swatches">
-                      {/* Swatches for Size and Color */}
+                    
                     </div>
                     <div className="product-designer">
                       <span className="designer-name" itemProp="brand">{product.brand || 'Brand Name'}</span>
@@ -92,7 +92,7 @@ const ProductsClientDetails = () => {
                 </div>
               </div>
             </div>
-            {/* Bottom Section */}
+        
           </div>
         </div>
       </section>

@@ -6,7 +6,13 @@ const FloatingMessageButton = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/compose-message');
+        const isLoggedIn = Boolean(localStorage.getItem('token')); // Check if user is logged in
+
+        if (isLoggedIn) {
+            navigate('/compose-message'); // Redirect to compose message if logged in
+        } else {
+            navigate('/login', { state: { from: '/compose-message' } }); // Redirect to login with intent to compose message
+        }
     };
 
     return (

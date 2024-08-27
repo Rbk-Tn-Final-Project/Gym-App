@@ -47,7 +47,7 @@ const AddProduct = () => {
         return res.data.secure_url
       } catch (err) {
         console.error('Image upload error:', err);
-        return '';
+        return res;
       }
     });
 
@@ -59,16 +59,7 @@ const AddProduct = () => {
     e.preventDefault();
     setLoading(true);
 
-    const uploadedImageUrls = await uploadImg();
-
-    if (uploadedImageUrls.length === 0) {
-      console.log(uploadedImageUrls,'uploadedImageUrlsaaaaaaaaaa');
-      
-      console.error('Image upload failed, cannot proceed with product submission.');
-      setLoading(false);
-      return;
-    }
-
+   
     try {
       const res = await axios.post('http://localhost:3000/api/product/', {name:name,description:description,quantity:quantity,price:price,img:imgUrl}, {
         headers: {
@@ -158,13 +149,7 @@ const AddProduct = () => {
               <label htmlFor="img" className="control-label">Product Images</label>
               <div>
                 <label className="control-label small" htmlFor="img">Images (jpg/png):</label>
-                <input
-                  type="file"
-                  name="img"
-                  id="img"
-                  multiple
-                  onChange={handleFileChange}
-                />
+               
               </div>
             </div>
 
@@ -176,6 +161,18 @@ const AddProduct = () => {
               </button>
             </div>
           </form>
+
+          <input
+                  type="file"
+                  name="img"
+                  id="img"
+                  multiple
+                  onChange={handleFileChange}
+                />
+               
+          <button onClick={()=>{
+                  uploadImg()
+                }}>upload</button>
         </div>
       </section>
     </div>

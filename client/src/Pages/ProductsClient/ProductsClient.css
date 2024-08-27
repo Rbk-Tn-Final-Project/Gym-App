@@ -1,10 +1,7 @@
-body {
-  padding-bottom: 4em;
-}
 
 .filter-list::before {
   content: '';
-  position: absolute;
+  
   top: 0;
   left: 0;
   right: 0;
@@ -16,28 +13,24 @@ body {
 
 .filter-list {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: center; 
   text-align: center;
   height: 100%;
   padding: 5rem 0;
   text-transform: uppercase;
   width: 100%;
   position: relative;
-  /* background-image: url('https://img.freepik.com/free-photo/top-view-perfectly-ordered-fitness-items_23-2150321809.jpg'); */
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat;
   margin-bottom: 2rem;
 }
 
 .filter-list h3 {
-  font-size: 2em;
+  font-size: 2em; 
   font-weight: bold;
   color: #444b4b;
   z-index: 2;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; 
+
 }
 
 .filter-list h4 {
@@ -45,8 +38,24 @@ body {
   font-weight: bold;
   color: #6c7074;
   z-index: 2;
-  margin-top: 0;
 }
+.col-xl-4 {
+  margin-left: 10px;
+}
+.product {
+  transition: 0.5s;
+  margin-bottom: 2em;
+  margin-top: 3rem;
+  border: solid 1px #fff;
+  padding: 10px;
+  border-radius: 10px;
+  justify-content: space-between;
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+
+
+
 
 .imgg {
   transition: 0.5s;
@@ -67,13 +76,15 @@ body {
 
 .product .info {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
-  padding: 1em 1em;
-  margin: 0 0 1em 0;
+  padding: 0.5em 1em;
+  margin: 0 0 0.5em 0;
   position: relative;
-  background-color: #fff;
+  border: solid 2px #fff;
+  border-radius: 10px;
+  background-color: transparent;
 }
 
 .product .info::after {
@@ -81,23 +92,25 @@ body {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  border-bottom: 1px solid #d0d0d0;
+  transform: translateX(-50%); 
+  width: 80%; 
+
 }
 
 .product .info .name {
   font-size: 1.3em;
   font-weight: 400;
   line-height: 1.4em;
-  color: #2d7bb5;
-  text-align: center;
+  color: #ffffff;
+  text-align: center; 
+
 }
 
 .product .info .price {
   font-size: 1.5em;
   font-weight: 600;
-  color: #75b546;
+  color: #e47c59;
+
   text-align: center;
 }
 
@@ -110,18 +123,20 @@ body {
 .product .links {
   display: flex;
   flex-direction: row;
-  padding: 0.5em 1em;
-  background-color: #fff;
+  padding: 0.5em 0.5em;
+  background-color: transparent;
 }
 
 .product .links .more,
 .product .links .add-to {
+
   border-radius: 5px;
-  background-color: #e0e0e0;
-  padding: 0.5em 0.5em 0 0.5em;
+  border: solid 1px #fff;
+  background-color: #b0b0b0;
+  padding: 0.5em 0.5em 0.4em 0.5em;
   text-transform: uppercase;
   text-align: center;
-  color: #333;
+  color: #000000;
   font-weight: 600;
   transition: background-color 0.3s, opacity 0.3s;
   margin: 5px;
@@ -133,12 +148,15 @@ body {
 
 .product .links .more:hover,
 .product .links .add-to:hover {
-  background-color: #b0b0b0;
+  background-color: #ffffff; 
+
   text-decoration: none;
   opacity: .9;
 }
 
-
+.product .links .add-to {
+  margin-left: auto;
+}
 
 @media (max-width: 1200px) {
   .filter-list h3 {
