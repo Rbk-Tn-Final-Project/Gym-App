@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './ManageEvent.css'
+import Dashbord from '../Dashbord'
 
 const UpdateEvent = () => {
     const { id } = useParams();
@@ -64,6 +65,8 @@ const UpdateEvent = () => {
     };
 
     return (
+        <>
+        <Dashbord/>
         <div className="update-event-container">
             <h1>Update Event</h1>
             {message && <p className="success-message">{message}</p>}
@@ -135,6 +138,7 @@ const UpdateEvent = () => {
                 <button type="submit">Update Event</button>
             </form>
         </div>
+        </>
     );
 };
 

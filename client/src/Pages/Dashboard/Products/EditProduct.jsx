@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './EditProduct.css'
+import Dashbord from '../Dashbord'
 
 
 
@@ -59,6 +60,8 @@ const EditProduct = () => {
       };
     
       return (
+        <>
+        <Dashbord/>
         <div className="container">
         <section className="panel panel-default">
           <div className="panel-heading">
@@ -149,6 +152,7 @@ const EditProduct = () => {
             </div>
           </section>
         </div>
+        </>
       );
 }
 

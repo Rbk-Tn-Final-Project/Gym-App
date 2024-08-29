@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Dashbord from '../Dashbord'
+
 
 const AddProduct = () => {
   const [files, setFiles] = useState([]);
@@ -79,6 +81,8 @@ const AddProduct = () => {
   };
 
   return (
+    <>
+    <Dashbord/>
     <div className="container">
       <section className="panel panel-default">
         <div className="panel-heading">
@@ -176,6 +180,7 @@ const AddProduct = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

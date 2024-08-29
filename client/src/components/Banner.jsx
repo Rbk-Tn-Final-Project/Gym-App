@@ -15,7 +15,7 @@ const Banner = () => {
                 />
                 <Carousel.Caption className="slide">
                 <p>Shape your body</p>
-                    <h3>Be <strong>strong</strong> traning hard</h3>
+                    <h3>Be <strong>strong</strong> training hard</h3>
                   
                     <Button variant="primary"><a href="/services">Learn More</a></Button>
                 </Carousel.Caption>
@@ -29,7 +29,7 @@ const Banner = () => {
                 />
                 <Carousel.Caption className="slide">
                 <p>Shape your body</p>
-                    <h3>Be <strong>strong</strong> traning hard</h3>
+                    <h3>Be <strong>strong</strong> training hard</h3>
                   
                     <Button variant="primary"><a href="/services">Learn More</a></Button>
                 </Carousel.Caption>

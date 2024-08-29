@@ -1,5 +1,5 @@
 .update-event-container {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     padding: 20px;
     background-color: #f8f9fa;
@@ -11,7 +11,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
-    color: #343a40;
+    color: #cb860e;
 }
 
 .update-event-form {
@@ -50,14 +50,14 @@
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #ca8a12;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .update-event-form button:hover {
-    background-color: #0056b3;
+    background-color: #6f4909;
 }
 
 .success-message {

@@ -1,0 +1,136 @@
+/* AddProduct.css */
+
+body {
+  background-color: #f5f5f5; /* Light grey background for the entire page */
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
+  color: #333; /* Standard text color for readability */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px; /* Container width for the form */
+  margin: 40px auto; /* Center the form with margin */
+  padding: 30px; /* Padding inside the container */
+  background-color: #fff; /* White background for the form container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.panel-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.panel-title {
+  font-size: 26px; /* Larger font size for the title */
+  color: #444; /* Darker color for title */
+  font-weight: bold; /* Bold title */
+}
+
+.form-horizontal {
+  display: flex;
+  flex-direction: column; /* Arrange elements in a column */
+  gap: 20px; /* Spacing between form groups */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Stack label and input vertically */
+  gap: 8px; /* Small gap between label and input */
+}
+
+.control-label {
+  font-weight: bold; /* Bold labels for emphasis */
+  color: #666; /* Slightly lighter color for labels */
+}
+
+.form-control {
+  padding: 12px; /* Padding for inputs */
+  font-size: 16px; /* Font size for form input */
+  border: 1px solid #ddd; /* Light border around input */
+  border-radius: 4px; /* Rounded input corners */
+  background-color: #f9f9f9; /* Light background for inputs */
+  transition: border-color 0.3s ease; /* Smooth transition for focus state */
+  width: 100%; /* Full width for inputs */
+}
+
+.form-control:focus {
+  border-color: #ff7f50; /* Orange border on focus */
+  outline: none; /* Remove default outline */
+  background-color: #fff; /* White background on focus */
+}
+
+textarea.form-control {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 100px; /* Minimum height for textarea */
+}
+
+.btn {
+  padding: 12px 20px; /* Button padding */
+  font-size: 16px; /* Font size for button */
+  background-color: #ff7f50; /* Orange color for button */
+  color: #fff; /* White text for button */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and click effects */
+  width: 100%; /* Full width for button */
+}
+
+.btn:hover {
+  background-color: #e7663e; /* Darker orange on hover */
+  transform: translateY(-2px); /* Lift the button slightly on hover */
+}
+
+.btn:disabled {
+  background-color: #ccc; /* Grey color for disabled button */
+  cursor: not-allowed; /* Not allowed cursor for disabled button */
+}
+
+.form-group.center {
+  text-align: center; /* Center the button */
+  margin-top: 20px;
+}
+
+input[type="file"] {
+  margin-top: 10px; /* Space above file input */
+  padding: 5px; /* Padding for file input */
+}
+
+button.upload-btn {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #ffa366; /* Light orange for the upload button */
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.upload-btn:hover {
+  background-color: #e6954d; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift button on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .panel-title {
+    font-size: 22px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  input[type="file"] {
+    width: 100%; /* Full width on smaller screens */
+  }
+}

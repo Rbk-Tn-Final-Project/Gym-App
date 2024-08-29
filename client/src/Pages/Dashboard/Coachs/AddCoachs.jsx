@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './AddCoachs.css';
+import Dashbord from '../Dashbord'
 
 const AddCoach = () => {
     const [coach, setCoach] = useState({
@@ -41,6 +42,8 @@ const AddCoach = () => {
     };
 
     return (
+        <>
+        <Dashbord/>
         <div className='add-coach-container'>
             <h1>Add Coach</h1>
             {message && <p>{message}</p>}
@@ -97,6 +100,7 @@ const AddCoach = () => {
                 <button type="submit">Add Coach</button>
             </form>
         </div>
+        </>
     );
 };
 

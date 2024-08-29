@@ -23,7 +23,7 @@
     "@mui/material": "^5.16.6",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
-    "drei": "^2.2.21",
+    "drei": "^0.0.45",
     "jquery": "^3.7.1",
     "moment": "^2.30.1",
     "owl.carousel": "^2.3.4",

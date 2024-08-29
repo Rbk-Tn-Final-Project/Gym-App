@@ -4,6 +4,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
+import Dashbord from '../Dashbord'
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -36,6 +37,8 @@ const Products = () => {
   };
 
   return (
+    <>
+    <Dashbord/>
     <div className='container3'>
     <div id="app">
       <header>
@@ -81,6 +84,7 @@ const Products = () => {
       </div>
     </div>
     </div>
+    </>
   );
 };
 

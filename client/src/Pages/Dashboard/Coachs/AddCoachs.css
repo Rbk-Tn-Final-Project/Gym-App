@@ -13,7 +13,7 @@
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: #d78006;
 }
 
 
@@ -38,7 +38,7 @@
 .add-coach-container button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #e88c0b;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -48,7 +48,7 @@
 }
 
 .add-coach-container button:hover {
-    background-color: #218838;
+    background-color: #bd770f;
 }
 
 .add-coach-container p {
