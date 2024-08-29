@@ -1,5 +1,5 @@
 .coach-list-container {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     padding: 20px;
     background-color: #f8f9fa;
@@ -71,7 +71,7 @@
     background-color: #c82333;
 }
 .add-coach-button {
-    background-color: #28a745;
+    background-color: #d0850c;
     color: white;
     padding: 10px 20px;
     border: none;

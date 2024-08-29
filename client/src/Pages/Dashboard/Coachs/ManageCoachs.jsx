@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './ManageCoachs.css'
+import Dashbord from '../Dashbord'
 
 
 
@@ -54,6 +55,8 @@ const ManageCoach = () => {
     };
 
     return (
+        <>
+        <Dashbord/>
         <div className='manage-coach-container'>
             <h1>Update Coach</h1>
             {message && <p>{message}</p>}
@@ -110,6 +113,7 @@ const ManageCoach = () => {
                 <button type="submit">Update Coach</button>
             </form>
         </div>
+        </>
     );
 };
 

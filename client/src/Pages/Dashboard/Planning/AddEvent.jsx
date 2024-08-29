@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './AddEvent.css'; // Import the CSS file
+import Dashbord from '../Dashbord'
 
 const AddPlanning = () => {
     const [coaches, setCoaches] = useState([]);
@@ -60,6 +61,9 @@ const AddPlanning = () => {
     };
 
     return (
+        <>
+        <Dashbord/>
+     
         <div className="add-planning-container">
             <h1>Add Planning Event</h1>
             {message && <p className="success-message">{message}</p>}
@@ -131,6 +135,7 @@ const AddPlanning = () => {
                 <button type="submit">Add Planning Event</button>
             </form>
         </div>
+        </>
     );
 };
 

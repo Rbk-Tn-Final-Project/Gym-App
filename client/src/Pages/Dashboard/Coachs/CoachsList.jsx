@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CoachsList.css'
+import Dashbord from '../Dashbord'
 
 const CoachList = () => {
     const [coaches, setCoaches] = useState([]);
@@ -48,6 +49,8 @@ const CoachList = () => {
     if (error) return <p>{error}</p>;
 
     return (
+        <>
+        <Dashbord/>
         <div className="coach-list-container">
             <h1>Coach List</h1>
             <button className="add-coach-button" onClick={handleAddCoachClick}>
@@ -83,6 +86,7 @@ const CoachList = () => {
                 </tbody>
             </table>
         </div>
+        </>
     );
 };
 

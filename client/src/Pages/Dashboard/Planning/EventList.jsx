@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './EventList.css';
+import Dashbord from '../Dashbord'
 
 const PlanningList = () => {
     const [plannings, setPlannings] = useState([]);
@@ -65,6 +66,9 @@ const PlanningList = () => {
     if (error) return <p>{error}</p>;
     
     return (
+        <>
+        <Dashbord/>
+     
         <div className="planning-list-container">
             <h1>Planning List</h1>
             <button className="add-event-button" onClick={handleAddEventClick}>
@@ -103,6 +107,7 @@ const PlanningList = () => {
                 </tbody>
             </table>
         </div>
+        </>
     );
 };
 

@@ -1,5 +1,5 @@
 .add-planning-container {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     padding: 20px;
     background-color: #f8f9fa;
@@ -11,7 +11,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
-    color: #343a40;
+    color: #d77614;
 }
 
 .add-planning-form {
@@ -50,18 +50,18 @@
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #e18607;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .add-planning-form button:hover {
-    background-color: #0056b3;
+    background-color: #8a5b09;
 }
 
 .success-message {
-    color: #28a745;
+    color: #28a731;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;

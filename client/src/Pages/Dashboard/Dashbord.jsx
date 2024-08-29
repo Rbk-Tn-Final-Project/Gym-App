@@ -4,18 +4,20 @@ import
 {BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill}
  from 'react-icons/bs'
+ import logo from '../../assets/logo.png'
+
 
 function Sidebar({openSidebarToggle, OpenSidebar}) {
   return (
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
         <div className='sidebar-title'>
           
-            <span className='icon close_icon' onClick={OpenSidebar}>X</span>
+            <img src={logo} alt="" />
         </div>
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
-                <a href="">
+                <a href="/Dashbord">
                     <BsGrid1X2Fill className='icon'/> Dashboard
                 </a>
             </li>
