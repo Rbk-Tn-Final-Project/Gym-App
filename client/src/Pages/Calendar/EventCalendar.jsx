@@ -179,14 +179,14 @@ const EventCalendar = () => {
                     overlayClassName="modal-overlay"
                 >
                     {selectedEvent && (
-                        <div>
+                        <div className='detailsev'>
                             <h2>{selectedEvent.title}</h2>
                             <p><strong>Date:</strong> {selectedEvent.start.toDateString()}</p>
                             <p><strong>Time:</strong> {selectedEvent.start.toLocaleTimeString()}</p>
                             <p><strong>Location:</strong> {selectedEvent.location}</p>
                             <p><strong>Description:</strong> {selectedEvent.description}</p>
                             <p><strong>Coach:</strong> {selectedEvent.coach || 'N/A'}</p>
-                            <button onClick={closeModal}>Close</button>
+                            <button className='closebtn' onClick={closeModal}>Close</button>
                         </div>
                     )}
                 </Modal>

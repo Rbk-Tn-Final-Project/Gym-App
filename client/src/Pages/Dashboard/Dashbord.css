@@ -44,6 +44,9 @@ body {
 .sidebar-list-item {
   padding: 15px 20px;
   transition: background-color 0.3s;
+  font-family: cursive;
+  font-size: 20px;
+  padding: 30px;
 }
 
 .sidebar-list-item a {
@@ -58,7 +61,7 @@ body {
 }
 
 .sidebar-list-item:hover {
-  background-color: #2980b9;
+  background-color: #f97629;
 }
 
 .close_icon {

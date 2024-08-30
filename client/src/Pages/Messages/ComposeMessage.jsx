@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Messages.css';
-import './FloatingMessageButton.css';
+
 
 const ComposeMessage = () => {
     const [formData, setFormData] = useState({
@@ -10,8 +10,8 @@ const ComposeMessage = () => {
         email: '',
         message: ''
     });
-    const [isSending, setIsSending] = useState(false); // Track sending state
-    const [error, setError] = useState(null); // Track errors
+    const [isSending, setIsSending] = useState(false); 
+    const [error, setError] = useState(null); 
 
     const handleChange = (e) => {
         setFormData({
@@ -22,8 +22,8 @@ const ComposeMessage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsSending(true); // Disable the button while sending
-        setError(null); // Clear any previous errors
+        setIsSending(true); 
+        setError(null); 
 
         try {
             const response = await axios.post('http://localhost:3000/api/messages', formData);
@@ -38,12 +38,13 @@ const ComposeMessage = () => {
             console.error('Error sending message:', error);
             setError('Error sending message. Please try again later.');
         } finally {
-            setIsSending(false); // Re-enable the button
+            setIsSending(false); 
         }
     };
 
     return (
-        <div className="compose-message-container">
+        <><div className='conax'>
+                <div className="compose-message-container">
             <h2>Compose Message</h2>
             <form onSubmit={handleSubmit}>
                 <label>First Name:</label>
@@ -85,6 +86,9 @@ const ComposeMessage = () => {
             </form>
             {error && <p className="error-message">{error}</p>}
         </div>
+        </div>
+        </>
+
     );
 };
 
