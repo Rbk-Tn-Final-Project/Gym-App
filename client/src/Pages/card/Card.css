@@ -1,0 +1,104 @@
+.contx {
+    background: #4d4d4d;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+  }
+  
+  .g-4 {
+    background: transparent;
+    width: 100%;
+    padding: 50px;
+    border-radius: 10px;
+  }
+  
+  .card {
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Container {
+    transition: transform 0.4s;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .Container:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .price {
+    color: #FF5733;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .button-group button {
+    flex: 1;
+    margin: 0 0.25rem;
+  }
+  
+  .bt1, .bt2 {
+    background: transparent;
+    color: black;
+    transition: 0.5s;
+    font-size: 1.25rem;
+    border: none;
+  }
+  
+  .bt1:hover {
+    background: rgb(173, 23, 0);
+    color: white;
+  }
+  
+  .bt2:hover {
+    background: green;
+    color: white;
+  }
+  
+  .btR {
+    margin-top: 10px;
+    background: black;
+    color: white;
+    border: none;
+    transition: 0.5s;
+  }
+  
+  .btR:hover {
+    background: rgb(173, 23, 0);
+    color: white;
+  }
+  
+  .total-price{
+    font-size: 25px;
+    background: #fff;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    width: 40rem;  
+    margin-left: 40px;
+  }

@@ -1,12 +1,11 @@
-/* ProductsList.css */
 
 .container3 {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 40px auto;
-  padding: 20px;
-  background-color: #f4f4f9; /* Light background color for better contrast */
+  padding: 40px;
+  background-color: #f4f4f9; 
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 #app header {
@@ -14,72 +13,71 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid #e0e0e0; /* Light grey border for separation */
-  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0; 
 }
 
 #app header .right {
   display: flex;
-  gap: 15px; /* Space between buttons */
+  gap: 15px; 
 }
 
 #app header .right button,
 #app header .right a {
   padding: 10px 20px;
   font-size: 16px;
-  color: #fff; /* White text color for buttons */
-  background-color: #d77c0c; /* Primary blue color for buttons */
+  color: #fff; 
+  background-color: #d77c0c; 
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  text-decoration: none; /* Remove underline for links */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  text-decoration: none; 
+  transition: background-color 0.3s ease; 
 }
 
 #app header .right button:hover,
 #app header .right a:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3; 
 }
 
 #app header .right button.soft {
-  background-color: #28a745; /* Green color for add product button */
+  background-color: #28a745; 
 }
 
 #app header .right button.soft:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #218838; 
 }
 
 .table {
   margin-top: 20px;
-  overflow-x: auto; /* Handle overflow for smaller screens */
+  overflow-x: auto; 
 }
 
 .table table {
   width: 100%;
-  border-collapse: collapse; /* Collapse borders for table */
-  background-color: #fff; /* White background for the table */
+  border-collapse: collapse; 
+  background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow for table */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
 }
 
 .table th,
 .table td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #e0e0e0; /* Light grey border between rows */
+  border-bottom: 1px solid #e0e0e0; 
   font-size: 16px;
-  color: #333; /* Darker color for better readability */
+  color: #333;
 }
 
 .table th {
-  background-color: #f7f7f7; /* Light grey background for table headers */
-  font-weight: 600; /* Bold headers */
+  background-color: #f7f7f7;
+  font-weight: 600; 
 }
 
 .table td img {
-  border-radius: 4px; /* Rounded corners for images */
-  object-fit: cover; /* Ensure images maintain aspect ratio */
+  border-radius: 4px; 
+  object-fit: cover; 
 }
 
 .product1 .side {
@@ -87,19 +85,19 @@
 }
 
 .product1 .side a {
-  color: #007bff; /* Blue color for links */
+  color: #007bff; 
   text-decoration: none;
   font-size: 16px;
-  margin-left: 10px; /* Space between icon and link text */
+  margin-left: 10px; 
 }
 
 .product1 .side a:hover {
-  color: #0056b3; /* Darker blue on hover */
+  color: #0056b3; 
 }
 
 .priority img {
   width: 100%;
-  max-width: 150px; /* Set max size for images */
+  max-width: 150px; 
   height: auto;
   display: block;
   margin: 0 auto;
@@ -109,17 +107,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0; /* Space around image */
+  padding: 10px 0;
 }
 
 @media (max-width: 768px) {
   .table table {
-    font-size: 14px; /* Smaller font size for mobile */
+    font-size: 14px; 
   }
 
   #app header .right button,
   #app header .right a {
-    padding: 8px 16px; /* Smaller padding for mobile */
+    padding: 8px 16px;
     font-size: 14px;
   }
 

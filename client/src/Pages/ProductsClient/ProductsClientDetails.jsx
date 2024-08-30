@@ -85,7 +85,7 @@ const ProductsClientDetails = () => {
                       <p className="designer-description">{product.description || 'Product Description'}</p>
                     </div>
                     <div className="purchase">
-                      <a href="#" id="add-to-cart" quickbeam="add-to-cart">Add to Cart</a>
+                      <a href="*" id="add-to-cart" quickbeam="add-to-cart">Add to Cart</a>
                       <a href="#">Read Full Details</a>
                     </div>
                   </div>

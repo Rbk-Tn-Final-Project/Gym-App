@@ -37,7 +37,7 @@ function Navbar() {
                 <li><Link to="/BMICalculator">BMI Calculator</Link></li>
                 <li><Link to="/SignUp">Sign Up</Link></li>
                 <li><Link to="/login"><i className="fas fa-user-circle"></i></Link></li>
-                <li><Link to="/*"><i className="fa-solid fa-bag-shopping"></i></Link></li>
+                <li><Link to="/Cart"><i className="fa-solid fa-bag-shopping"></i></Link></li>
                 {isAdmin && (
                   <li><Link to="/dashbord"><i className="fa-solid fa-table-columns"></i></Link></li>
                 )}
