@@ -9,7 +9,7 @@ const multer = require('multer');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/ProductRoutes');
 const messageRoutes = require('./routes/messageRoutes'); 
-
+const cartRoutes = require('./routes/cartRoutes');
 const app = express();
 
 
@@ -34,6 +34,7 @@ app.use(express.static('uploads'));
 app.use('/api/users', userRoutes);
 app.use('/api/products', upload.single('img'), productRoutes); 
 app.use('/api/messages', messageRoutes); 
+app.use('/api/cart', cartRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
