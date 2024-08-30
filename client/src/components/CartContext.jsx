@@ -1,90 +1,48 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
-import axios from 'axios';
-import AuthContext from './AuthContext';
+import React, { createContext, useState, useEffect } from 'react';
 
-const CartContext = createContext({
-  cart: [], // Ensure default is an empty array
-  addToCart: () => {},
-  removeFromCart: () => {},
-  incrementQuantity: () => {},
-  decrementQuantity: () => {}
-});
+const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  const { user } = useContext(AuthContext);
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
 
   useEffect(() => {
-    if (user) {
-      const updateCart = async () => {
-        try {
-          const response = await axios.get(`http://localhost:3000/api/cart/${user.id}`);
-          if (Array.isArray(response.data)) {
-            setCart(response.data);
-          } else {
-            console.error('API response is not an array:', response.data);
-            setCart([]);
-          }
-        } catch (error) {
-          console.error('Failed to fetch cart items', error);
-          setCart([]);
-        }
-      };
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
-      updateCart(); // Fetch cart items when the user changes
-    }
-  }, [user]); // Depend on user to refetch cart when user changes
-
-  const addToCart = async (product) => {
-    try {
-      await axios.post('http://localhost:3000/api/cart/add', {
-        userId: user.id,
-        productId: product.id,
-        quantity: 1
-      });
-      await updateCart(); // Refresh cart after adding item
-    } catch (error) {
-      console.error('Failed to add item to cart', error);
-    }
-  };
-
-  const removeFromCart = async (productId) => {
-    try {
-      await axios.delete(`/api/cart/remove/${user.id}/${productId}`);
-      await updateCart(); // Refresh cart after removing item
-    } catch (error) {
-      console.error('Failed to remove item from cart', error);
-    }
-  };
-
-  const incrementQuantity = async (productId) => {
-    try {
-      const item = cart.find(item => item.productId === productId);
-      await axios.post('/api/cart/add', {
-        userId: user.id,
-        productId,
-        quantity: item.quantity + 1
-      });
-      await updateCart(); // Refresh cart after incrementing quantity
-    } catch (error) {
-      console.error('Failed to increment item quantity', error);
-    }
-  };
-
-  const decrementQuantity = async (productId) => {
-    try {
-      const item = cart.find(item => item.productId === productId);
-      if (item.quantity > 1) {
-        await axios.post('/api/cart/add', {
-          userId: user.id,
-          productId,
-          quantity: item.quantity - 1
-        });
-        await updateCart(); // Refresh cart after decrementing quantity
+  const addToCart = (product) => {
+    setCart(prevCart => {
+      const existingProduct = prevCart.find(item => item.id === product.id);
+      if (existingProduct) {
+        return prevCart.map(item =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [...prevCart, { ...product, quantity: 1 }];
       }
-    } catch (error) {
-      console.error('Failed to decrement item quantity', error);
-    }
+    });
+  };
+
+  const removeFromCart = (id) => {
+    setCart((prevCart) => prevCart.filter(item => item.id !== id));
+  };
+
+  const incrementQuantity = (id) => {
+    setCart((prevCart) => 
+      prevCart.map(item =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decrementQuantity = (id) => {
+    setCart((prevCart) => 
+      prevCart.map(item =>
+        item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+      )
+    );
   };
 
   return (
