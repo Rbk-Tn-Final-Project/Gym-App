@@ -46,7 +46,7 @@ const Products = () => {
         <div className="right">
           <button onClick={addProduct} className="soft">Add product</button>
           <button onClick={deleteProducts}>Delete all</button>
-          <a href="/dashbord">back</a>
+        
         </div>
       </header>
 

@@ -10,6 +10,7 @@ import Hero from './Pages/Home/Hero.jsx';
 import Products from "./Pages/Dashboard/Products/ProductsList.jsx";
 import ProductDetails from "./Pages/Dashboard/Products/ProductDetails.jsx";
 import EditProduct from "./Pages/Dashboard/Products/EditProduct.jsx";
+import { AuthProvider } from './components/AuthContext.jsx';
 import { CartProvider } from './components/CartContext'; 
 import { UserProvider } from './components/UserContext';
 import Dashboard from "./Pages/Dashboard/Dashbord.jsx";
@@ -32,7 +33,7 @@ import ProductsClientDetails from "./Pages/ProductsClient/ProductsClientDetails.
 import BMICalculator from "./Pages/BMI calculator/BmiCalculator.jsx";
 import OurTeam from "./Pages/Our Team/OurTeam.jsx";
 import Error404 from "./Pages/404/404.jsx";
-import Cart from "./Pages/card.jsx/card.jsx";
+import Cart from "./Pages/card/card.jsx";
 import Services from "./Pages/services/services.jsx";
 
 
@@ -80,11 +81,15 @@ function AppContent() {
 function App() {
   return (
     <Router>
+     
       <UserProvider>
+      <AuthProvider>
         <CartProvider>
           <AppContent />
         </CartProvider>
+        </AuthProvider>
       </UserProvider>
+      
     </Router>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Dashbord from '../Dashbord'
+import './AddProduct.css'
 
 
 const AddProduct = () => {
@@ -83,7 +84,7 @@ const AddProduct = () => {
   return (
     <>
     <Dashbord/>
-    <div className="container">
+    <div className="containerX">
       <section className="panel panel-default">
         <div className="panel-heading">
           <h3 className="panel-title">Add New Product</h3>
@@ -153,26 +154,28 @@ const AddProduct = () => {
               <label htmlFor="img" className="control-label">Product Images</label>
               <div>
                 <label className="control-label small" htmlFor="img">Images (jpg/png):</label>
-               
-              </div>
-            </div>
-
-            <hr />
-
-            <div className="form-group center">
-              <button className="btn btn-primary" type="submit" disabled={loading}>
-                {loading ? 'Adding...' : 'Confirm'}
-              </button>
-            </div>
-          </form>
-
-          <input
+                <input
                   type="file"
                   name="img"
                   id="img"
                   multiple
                   onChange={handleFileChange}
                 />
+              </div>
+            </div>
+
+            <hr />
+            
+         
+   
+            <div className="form-group center">
+              <button className="btnn btnn-primary" type="submit" disabled={loading}>
+                {loading ? 'Adding...' : 'Confirm'}
+              </button>
+            </div>
+          </form>
+
+         
                
           <button onClick={()=>{
                   uploadImg()
@@ -180,6 +183,8 @@ const AddProduct = () => {
         </div>
       </section>
     </div>
+
+
     </>
   );
 };
