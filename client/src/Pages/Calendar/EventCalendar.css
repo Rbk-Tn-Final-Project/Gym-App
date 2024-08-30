@@ -86,6 +86,41 @@
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.closebtn{
+    background: #f97629;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 175px;
+    font-size: 15px;
+    
+    transition: 0.5s;
+}
+
+.closebtn:hover{
+    background: #b94400;
+}
+.detailsev h2{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+    background-color: #b94400;
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+}
+.detailsev p{
+    font-size: 20px;
+    text-align: center;
+    transition: 0.5s;
+    font-family: cursive;
+}
+
+.detailsev p:hover{
+    background: #acacac;
+    border-radius: 30px;
+}
 
 .modal-overlay {
     position: fixed;

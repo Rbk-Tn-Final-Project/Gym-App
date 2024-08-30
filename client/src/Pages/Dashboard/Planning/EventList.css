@@ -1,38 +1,40 @@
 .planning-list-container {
-    padding: 8px; /* Compact padding for container */
+    padding: 8px;
     font-family: Arial, sans-serif;
 }
 
 .planning-list-table {
-    width: 65%; /* Set width to 80% for compact display */
+    width: 65%; 
     border-collapse: collapse;
-    font-size: 18px; /* Reduced font size for table content */
-    table-layout: auto; /* Adjusts table width to content */
-    margin-left: 19%; /* Aligns table to the left side */
-    margin-top: 80px; /* Adds some top margin for spacing */
-    float: left; /* Floats the table to the left */
+    font-size: 18px; 
+    table-layout: auto;
+    margin-left: 19%;
+    margin-top: 180px;
+    float: left; 
 }
 
 .planning-list-table th, .planning-list-table td {
     border: 1px solid #ddd;
-    padding: 4px; /* Reduced padding for cells */
-    text-align: left; /* Align text to left for a cleaner look */
+    padding: 4px;
+    text-align: left;
+    font-size: 18px;
+    font-family: cursive;
 }
 
 .planning-list-table th {
     background-color: #343a40;
     color: white;
-    font-size: 12px; /* Reduced font size for headers */
-    padding: 6px; /* Adjusted padding for header cells */
+    font-size: 12px;
+    padding: 6px;
 }
 
 .update-button, .delete-button {
-    padding: 4px 8px; /* Further reduced padding for buttons */
+    padding: 4px 8px;
     border: none;
-    border-radius: 3px; /* Smaller border radius */
+    border-radius: 3px; 
     cursor: pointer;
-    font-size: 12px; /* Smaller font size for buttons */
-    margin: 2px 0; /* Small margin for vertical spacing */
+    font-size: 12px; 
+    margin: 2px 0; 
 }
 
 .update-button {
@@ -48,7 +50,7 @@
 .delete-button {
     background-color: #dc3545;
     color: white;
-    margin-left: 4px; /* Further reduced margin between buttons */
+    margin-left: 4px; 
 }
 
 .delete-button:hover {
@@ -57,26 +59,27 @@
 
 .success-message {
     color: #28a745;
-    font-size: 12px; /* Smaller font size for messages */
-    margin-bottom: 8px; /* Reduced space below messages */
+    font-size: 12px; 
+    margin-bottom: 8px;
 }
 
 .error-message {
     color: #dc3545;
-    font-size: 12px; /* Smaller font size for messages */
+    font-size: 12px; 
     margin-bottom: 8px;
 }
 
 .add-event-button {
     background-color: #d7780c;
     color: white;
-    padding: 6px 16px; /* Reduced padding for add button */
+    padding: 6px 16px; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-bottom: 10px; /* Reduced margin at bottom */
-    font-size: 18px; /* Smaller font size for button */
+    margin-bottom: 10px;
+    font-size: 18px; 
     margin-left: -6%;
+    margin-top: 140px;
 }
 
 .add-event-button:hover {

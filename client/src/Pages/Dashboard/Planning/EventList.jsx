@@ -76,6 +76,7 @@ const PlanningList = () => {
             </button>
             <table className="planning-list-table">
                 <thead>
+                    
                     <tr>
                         <th>Planning Name</th>
                         <th>Planning Date</th>

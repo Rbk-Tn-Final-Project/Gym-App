@@ -22,7 +22,7 @@
 .floating-message-button .dot {
     height: 12px;
     width: 12px;
-    background-color: #007bff; /* Blue dot */
+    background-color: #181818; /* Blue dot */
     border-radius: 50%;
     margin-right: 8px;
     flex-shrink: 0; /* Prevent the dot from shrinking */

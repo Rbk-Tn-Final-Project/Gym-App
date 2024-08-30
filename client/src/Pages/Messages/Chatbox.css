@@ -14,7 +14,7 @@
 }
 
 .chatbox-header {
-    background-color: #007BFF;
+    background-color: #000000;
     color: white;
     padding: 10px;
     font-weight: bold;
@@ -77,7 +77,7 @@
 }
 
 .message-input button {
-    background-color: #007BFF;
+    background-color: #000000;
     border: none;
     color: white;
     border-radius: 50%;
@@ -100,7 +100,7 @@
     flex: 1;
     padding: 8px;
     margin: 0 5px;
-    background-color: #007BFF;
+    background-color: #000000;
     color: white;
     border: none;
     border-radius: 20px;
@@ -109,7 +109,7 @@
 }
 
 .chatbox-footer button.active {
-    background-color: #0056b3;
+    background-color: #000000;
 }
 
 /* Adjust floating message button position */
@@ -119,17 +119,17 @@
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #007BFF;
+    background-color: #ff6600;
     color: white;
-    border-radius: 50%;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    z-index: 1001; /* Higher z-index to be above the chatbox */
+    z-index: 1001; 
 }
 
 .floating-message-button:hover {
-    background-color: #0056b3;
+    background-color: #fc9c4d;
 }
